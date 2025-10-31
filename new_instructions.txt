@@ -1,0 +1,7 @@
+these are the instructions i want you to follow.
+
+1. i want you to take the ./copy folder, read, and analyze it use the libs/airtable.js to connect to airtable,
+
+2. and then write a script that creates the tables dynamically and updates them with the data.
+
+3. and then update the copy files from json to js files that gets the data and returns the same structure as the json file so that it would be a seamless integration and update

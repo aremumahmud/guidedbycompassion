@@ -1,0 +1,203 @@
+/* CSS Variables for Dynamic Theming */
+/*
+ * Guided by Compassion Color Palette:
+ * - #7E5DA7 (Purple) - Primary brand color
+ * - #00A89E (Teal) - Secondary brand color
+ * - #EDCFA2 (Light Sand) - Accent
+ * - #C49A6C (Tan) - Accent
+ * - #AA7C50 (Brown) - Accent
+ * - #6D6F71 (Gray) - Neutral text/base
+ * - #FFFFFF (White) - Clean contrast and backgrounds
+ * - Light grey for balance and neutrality
+ */
+:root {
+  /* Primary Colors - Purple Palette */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #7E5DA7;
+  --color-primary-600: #6D5A99;
+  --color-primary-700: #5E4E88;
+  --color-primary-800: #4E3F74;
+  --color-primary-900: #3E335F;
+
+  /* Secondary Colors - Teal Palette */
+  --color-secondary-50: #f0fdfa;
+  --color-secondary-100: #ccfbf1;
+  --color-secondary-200: #99f6e4;
+  --color-secondary-300: #5eead4;
+  --color-secondary-400: #2dd4bf;
+  --color-secondary-500: #00A89E;
+  --color-secondary-600: #009287;
+  --color-secondary-700: #007E77;
+  --color-secondary-800: #006860;
+  --color-secondary-900: #00524C;
+
+  /* Accent Colors */
+  --color-accent-blue: #00A89E;
+  --color-accent-indigo: #7E5DA7;
+  --color-accent-purple: #7E5DA7;
+  --color-accent-pink: #e83e8c;
+  --color-accent-red: #dc3545;
+  --color-accent-orange: #C49A6C;
+  --color-accent-yellow: #EDCFA2;
+  --color-accent-green: #10b981;
+  --color-accent-teal: #00A89E;
+  --color-accent-cyan: #00A89E;
+
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Background Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #f9fafb;
+  --bg-dark: #374151;
+  --bg-gradient-hero: linear-gradient(135deg, #7E5DA7 0%, #00A89E 100%);
+  --bg-gradient-card: linear-gradient(135deg, #FFFFFF 0%, #f9fafb 100%);
+  --bg-overlay-parallax: rgb(126, 93, 167);
+  --bg-overlay: rgba(126, 93, 167, 0.1);
+
+  /* Text Colors */
+  --text-primary: #6D6F71;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-light: #FFFFFF;
+  --text-inverse: #FFFFFF;
+
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-dark: #9ca3af;
+  --border-primary: #7E5DA7;
+
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-warning: #fbbf24;
+  --status-error: #dc3545;
+  --status-info: #14B8A6;
+
+  /* Additional Color Variables for Consistency */
+  --success-color: #10b981;
+  --success-color-dark: #059669;
+  --success-bg: #f0fdf4;
+  --success-border: #10b981;
+  --success-text: #059669;
+  --warning-color: #fbbf24;
+  --warning-color-dark: #d97706;
+  --error-color: #dc3545;
+  --error-color-dark: #b02a37;
+  --accent-primary: #6B46C1;
+  --accent-secondary: #14B8A6;
+
+  /* Interactive Colors */
+  --interactive-primary-default: #7E5DA7;
+  --interactive-primary-hover: #6D5A99;
+  --interactive-primary-active: #5E4E88;
+  --interactive-primary-disabled: #6b7280;
+
+  --interactive-secondary-default: #FFFFFF;
+  --interactive-secondary-hover: #f9fafb;
+  --interactive-secondary-active: #e5e7eb;
+  --interactive-secondary-disabled: #d1d5db;
+
+  --interactive-accent-default: #00A89E;
+  --interactive-accent-hover: #009287;
+  --interactive-accent-active: #007E77;
+  --interactive-accent-disabled: #6b7280;
+
+  /* Shadow Colors */
+  --shadow-sm: 0 1px 2px rgba(55, 65, 81, 0.05);
+  --shadow-md: 0 4px 6px rgba(55, 65, 81, 0.1);
+  --shadow-lg: 0 10px 15px rgba(55, 65, 81, 0.1);
+  --shadow-xl: 0 20px 25px rgba(55, 65, 81, 0.1);
+  --shadow-card: 0 10px 30px rgba(55, 65, 81, 0.1);
+  --shadow-button: 0 2px 4px rgba(55, 65, 81, 0.1);
+  --shadow-focus: 0 0 0 4px rgba(107, 70, 193, 0.1);
+
+  /* Opacity Values */
+  --opacity-10: 0.1;
+  --opacity-15: 0.15;
+  --opacity-20: 0.2;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-75: 0.75;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+}
+
+/* Theme-specific overrides */
+[data-theme="dark"] {
+  --bg-primary: #374151;
+  --bg-secondary: #1f2937;
+  --text-primary: #FFFFFF;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-light: #4b5563;
+  --border-medium: #6b7280;
+  --border-dark: #9ca3af;
+  --interactive-primary-default: #FFFFFF;
+  --interactive-primary-hover: #e5e7eb;
+  --interactive-primary-active: #d1d5db;
+  --interactive-secondary-default: #374151;
+  --interactive-secondary-hover: #1f2937;
+  --interactive-secondary-active: #4b5563;
+}
+
+[data-theme="purple"] {
+  --interactive-accent-default: #6B46C1;
+  --interactive-accent-hover: #553C9A;
+  --interactive-accent-active: #4c1d95;
+  --color-accent-purple: #6B46C1;
+}
+
+[data-theme="teal"] {
+  --interactive-accent-default: #14B8A6;
+  --interactive-accent-hover: #0D9488;
+  --interactive-accent-active: #0f766e;
+  --color-accent-teal: #14B8A6;
+}
+
+[data-theme="blue"] {
+  --interactive-accent-default: #06b6d4;
+  --interactive-accent-hover: #0891b2;
+  --interactive-accent-active: #0e7490;
+  --color-accent-blue: #06b6d4;
+}
+
+/* Utility classes for common color patterns */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-dark { background-color: var(--bg-dark); }
+.bg-gradient-hero { background: var(--bg-gradient-hero); }
+.bg-gradient-card { background: var(--bg-gradient-card); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+.text-inverse { color: var(--text-inverse); }
+
+.border-light { border-color: var(--border-light); }
+.border-medium { border-color: var(--border-medium); }
+.border-dark { border-color: var(--border-dark); }
+.border-primary { border-color: var(--border-primary); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-card { box-shadow: var(--shadow-card); }
+.shadow-button { box-shadow: var(--shadow-button); }
