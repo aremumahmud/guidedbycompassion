@@ -71,13 +71,15 @@ function Header() {
       <div className="top-banner">
         <div className="top-banner-container">
           <div className="top-banner-content">
-            <a href="tel:346-870-2912" className="top-banner-item">
+            <a href="tel:346-870-2912" className="top-banner-item" title="Call us">
               <span className="top-banner-icon">📞</span>
-              <span className="top-banner-text">346-870-2912</span>
+              <span className="top-banner-text desktop-only">346-870-2912</span>
+              <span className="top-banner-number mobile-only">346-870-2912</span>
             </a>
-            <a href="mailto:contact@guidedbycompassion.com" className="top-banner-item">
+            <a href="mailto:contact@guidedbycompassion.com" className="top-banner-item" title="Email us">
               <span className="top-banner-icon">📧</span>
-              <span className="top-banner-text">contact@guidedbycompassion.com</span>
+              <span className="top-banner-text desktop-only">contact@guidedbycompassion.com</span>
+              <span className="top-banner-icon-only mobile-only">📧</span>
             </a>
           </div>
         </div>
