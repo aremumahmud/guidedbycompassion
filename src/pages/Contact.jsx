@@ -106,14 +106,14 @@ function Contact() {
                             <p className="contact-hero-description">
                                 {contactCopy.hero.description}
                             </p>
-                            <div className="contact-stats" data-aos="fade-up" data-aos-delay="200">
+                            {/* <div className="contact-stats" data-aos="fade-up" data-aos-delay="200">
                                 {contactCopy.hero.stats.map((stat, index) => (
                                     <div key={index} className="stat">
                                         <span className="stat-number">{stat.number}</span>
                                         <span className="stat-label">{stat.label}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

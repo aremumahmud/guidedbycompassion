@@ -122,14 +122,14 @@ function ReferUs() {
                             <p className="refer-hero-description">
                                 {referUsCopy.hero.description}
                             </p>
-                            <div className="refer-stats" data-aos="fade-up" data-aos-delay="200">
+                            {/* <div className="refer-stats" data-aos="fade-up" data-aos-delay="200">
                                 {referUsCopy.hero.stats.map((stat, index) => (
                                     <div key={index} className="stat">
                                         <span className="stat-number">{stat.number}</span>
                                         <span className="stat-label">{stat.label}</span>
                                 </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

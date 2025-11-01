@@ -60,14 +60,14 @@ function Services() {
                             <p className="services-hero-description">
                                 {servicesCopy.hero.description}
                             </p>
-                            <div className="services-stats" data-aos="fade-up" data-aos-delay="200">
+                            {/* <div className="services-stats" data-aos="fade-up" data-aos-delay="200">
                                 {servicesCopy.hero.stats.map((stat, index) => (
                                     <div key={index} className="stat">
                                         <span className="stat-number">{stat.number}</span>
                                         <span className="stat-label">{stat.label}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
