@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import { servicesList } from '../data/servicesData'
 import emailService from '../services/emailService'
 import schedulingCopy from '../../copy/scheduling.json'
+import contactCopy from '../../copy/contact.json'
 
 function Scheduling() {
     const [formData, setFormData] = useState({
@@ -121,11 +122,11 @@ function Scheduling() {
                 }, 5000);
             } else {
                 console.error('Failed to send consultation form:', adminResult.error);
-                alert('Sorry, there was an error submitting your consultation request. Please try again or call us directly at (832) 446-0705.');
+                alert(`Sorry, there was an error submitting your consultation request. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
             }
         } catch (error) {
             console.error('Consultation form submission error:', error);
-            alert('Sorry, there was an error submitting your consultation request. Please try again or call us directly at (832) 446-0705.');
+            alert(`Sorry, there was an error submitting your consultation request. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
         } finally {
             setIsSubmitting(false);
         }

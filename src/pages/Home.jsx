@@ -1,6 +1,5 @@
 import Header from '../components/Header'
 import Hero from '../components/hero'
-import Statistics from '../components/Statistics'
 import About from '../components/About'
 import Services from '../components/Services'
 import Trust from '../components/Trust'
@@ -18,7 +17,6 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <Statistics />
       <About />
       <Services />
       <Trust />

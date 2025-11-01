@@ -186,7 +186,7 @@ function getReferUsDataFallback() {
         {
           icon: "📞",
           title: "Call Us",
-          details: "346-870-2912",
+          details: "713-325-0885",
           subtitle: "Available during business hours"
         },
         {

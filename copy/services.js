@@ -50,7 +50,7 @@ function getServicesDataFallback() {
       whatWeProvide: "What We Do:",
       keyBenefits: "Why Choose Us:",
       ctaTitle: "Ready to learn more about our services?",
-      ctaDescription: "Contact us today at 346-870-2912 or contact@guidedbycompassion.com to schedule your free in-home care consultation. Let us create a personalized care plan for your loved one!",
+      ctaDescription: "Contact us today at 713-325-0885 or contact@guidedbycompassion.com to schedule your free in-home care consultation. Let us create a personalized care plan for your loved one!",
       ctaButton: "Get Started Today"
     },
     contact: {
@@ -59,7 +59,7 @@ function getServicesDataFallback() {
         {
           icon: "📞",
           title: "Call Us",
-          details: "346-870-2912",
+          details: "713-325-0885",
           subtitle: "Available during business hours"
         },
         {

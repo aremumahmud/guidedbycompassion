@@ -7,13 +7,9 @@
   "hero": {
     "badge": "Careers",
     "title": "Join Our",
-    "titleHighlight": "Home Care Team",
-    "description": "Make a meaningful difference in people's lives while building a rewarding career in home care. We're looking for compassionate, dedicated caregivers to join our growing team in Houston.",
-    "stats": [
-      { "number": "Competitive", "label": "Pay" },
-      { "number": "Flexible", "label": "Scheduling" },
-      { "number": "Full Benefits", "label": "Package Available" }
-    ]
+    "titleHighlight": "Care Team",
+    "description": "Make a meaningful difference in people's lives while building a rewarding career in Personal Assistance Services (PAS). We're looking for compassionate, dedicated caregivers to join our growing team in Houston.",
+    "stats": []
   },
   "jobListings": {
     "title": "Current Openings",
@@ -22,12 +18,12 @@
       {
         "id": 1,
         "slug": "caregivers-cna",
-        "title": "Caregivers/ CNA",
+        "title": "Caregivers",
         "type": "On-Site",
         "location": "On-Site",
-        "salary": "Competitive Pay",
+        "salary": "",
         "posted": "Now Hiring",
-        "description": "Caregivers/Certified Nursing Assistants provide essential support with daily activities, mobility, and companionship, ensuring comfort, dignity, and safety for clients."
+        "description": "Caregivers provide essential non-medical support with daily activities, mobility, and companionship through Personal Assistance Services (PAS), ensuring comfort, dignity, and safety for clients."
       }
     ],
     "buttons": {

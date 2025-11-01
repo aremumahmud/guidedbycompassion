@@ -72,11 +72,11 @@ function Contact() {
                 }, 5000);
             } else {
                 console.error('Failed to send contact form:', adminResult.error);
-                alert('Sorry, there was an error sending your message. Please try again or call us directly at (832) 446-0705.');
+                alert(`Sorry, there was an error sending your message. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
             }
         } catch (error) {
             console.error('Contact form submission error:', error);
-            alert('Sorry, there was an error sending your message. Please try again or call us directly at (832) 446-0705.');
+            alert(`Sorry, there was an error sending your message. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
         } finally {
             setIsSubmitting(false);
         }
@@ -130,22 +130,34 @@ function Contact() {
                             </div>
                             
                             <div className="contact-info-grid1">
-                                {contactInfo.map((item, index) => (
-                                    <div key={index} className="contact-info-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                                        <div className="contact-card-icon">{item.icon}</div>
-                                        <div className="contact-card-content">
-                                            <h3 className="contact-card-title">{item.title}</h3>
-                                            {item.link ? (
-                                                <a href={item.link} className="contact-card-link">
-                                                    {item.details}
-                                                </a>
-                                            ) : (
-                                                <p className="contact-card-details">{item.details}</p>
-                                            )}
-                                            <p className="contact-card-subtext">{item.subtext}</p>
+                                {contactInfo.map((item, index) => {
+                                    // Use dynamic contactDetails for phone and email
+                                    const isPhone = item.title === "Call Us";
+                                    const isEmail = item.title === "Email Us";
+                                    const link = isPhone ? contactCopy.contactDetails.phoneLink : 
+                                                isEmail ? contactCopy.contactDetails.emailLink : 
+                                                item.link;
+                                    const details = isPhone ? contactCopy.contactDetails.phone : 
+                                                   isEmail ? contactCopy.contactDetails.email : 
+                                                   item.details;
+                                    
+                                    return (
+                                        <div key={index} className="contact-info-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                                            <div className="contact-card-icon">{item.icon}</div>
+                                            <div className="contact-card-content">
+                                                <h3 className="contact-card-title">{item.title}</h3>
+                                                {link ? (
+                                                    <a href={link} className="contact-card-link">
+                                                        {details}
+                                                    </a>
+                                                ) : (
+                                                    <p className="contact-card-details">{details}</p>
+                                                )}
+                                                <p className="contact-card-subtext">{item.subtext}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
 
                             <div className="emergency-notice" data-aos="fade-up" data-aos-delay="400">

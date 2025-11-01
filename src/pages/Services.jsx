@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import ServicesParallax from '../components/ServicesParallax'
 import ServicesFAQ from '../components/ServicesFAQ'
 import servicesCopy from '../../copy/services.json'
+import contactCopy from '../../copy/contact.json'
 
 function Services() {
     const { serviceId } = useParams();
@@ -138,7 +139,7 @@ function Services() {
                                     <div className="contact-icon">{item.icon}</div>
                                     <h3>{item.title}</h3>
                                     {item.title === "Call Us" || item.title === "Email Us" ? (
-                                        <a href={item.title === "Call Us" ? "tel:8324460705" : "mailto:Info@journey-of-care.com"} className="contact-link">{item.details}</a>
+                                        <a href={item.title === "Call Us" ? contactCopy.contactDetails.phoneLink : contactCopy.contactDetails.emailLink} className="contact-link">{item.details}</a>
                                     ) : (
                                         <p className="contact-text">{item.details}</p>
                                     )}

@@ -48,9 +48,9 @@ function getContactDataFallback() {
         {
           icon: "📞",
           title: "Call Us",
-          details: "346-870-2912",
+          details: "713-325-0885",
           subtext: "Available during business hours",
-          link: "tel:+13468702912"
+          link: "tel:+17133250885"
         },
         {
           icon: "📧",

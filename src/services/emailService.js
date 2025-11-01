@@ -9,6 +9,8 @@ const Application_Email = import.meta.env.VITE_APPLICATION_EMAIL;
 
 console.log('Admin_Email:', Admin_Email);
 console.log('Admin_Name:', Admin_Name);
+
+
 // Validate API key
 console.log('API Key loaded:', BREVO_API_KEY ? 'Yes' : 'No');
 if (!BREVO_API_KEY) {
@@ -45,10 +47,11 @@ class EmailService {
     const applicantName = `${formData.firstName || ''} ${formData.noMiddleName ? '' : (formData.middleName || '')} ${formData.lastName || ''}`.trim() || 'Unknown Applicant';
     const subject = `New Employment Application - ${applicantName}`;
 
-    const recipients = [ { email: Admin_Email, name: Admin_Name } ];
+    const recipients = [ ];
 
     console.log('Application_Email:', recipients);
     if (typeof Application_Email === 'string' && Application_Email && Application_Email !== Admin_Email) {
+    //   recipients.pop()
       recipients.push({ email: Application_Email, name: 'Applications' });
     }
 
@@ -649,7 +652,7 @@ Submitted: ${new Date().toLocaleString()}
                     <!-- Footer -->
                     <tr>
                         <td style="text-align: center; padding: 25px 20px; background-color: #1a1a1a; color: #ffffff;">
-                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:3468702912" style="color: #ffffff; text-decoration: none; font-weight: bold;">346-870-2912</a> | ${Admin_Email}</p>
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:7133250885" style="color: #ffffff; text-decoration: none; font-weight: bold;">713-325-0885</a> | ${Admin_Email}</p>
                             <p style="margin: 5px 0; opacity: 0.8; font-size: 14px; font-family: Arial, sans-serif;"><em>Please respond within 24 hours for urgent requests</em></p>
                         </td>
                     </tr>
@@ -863,7 +866,7 @@ Submitted: ${new Date().toLocaleString()}
                     <!-- Footer -->
                     <tr>
                         <td style="text-align: center; padding: 25px 20px; background-color: #1a1a1a; color: #ffffff;">
-                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:3468702912" style="color: #ffffff; text-decoration: none; font-weight: bold;">346-870-2912</a> | ${Admin_Email}</p>
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:7133250885" style="color: #ffffff; text-decoration: none; font-weight: bold;">713-325-0885</a> | ${Admin_Email}</p>
                             <p style="margin: 5px 0; opacity: 0.8; font-size: 14px; font-family: Arial, sans-serif;"><em>Please schedule consultation within 24-48 hours</em></p>
                         </td>
                     </tr>
@@ -1039,7 +1042,7 @@ Submitted: ${new Date().toLocaleString()}
                     <!-- Footer -->
                     <tr>
                         <td style="text-align: center; padding: 25px 20px; background-color: #1a1a1a; color: #ffffff;">
-                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:3468702912" style="color: #ffffff; text-decoration: none; font-weight: bold;">346-870-2912</a> | ${Admin_Email}</p>
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:7133250885" style="color: #ffffff; text-decoration: none; font-weight: bold;">713-325-0885</a> | ${Admin_Email}</p>
                             <p style="margin: 5px 0; opacity: 0.8; font-size: 14px; font-family: Arial, sans-serif;"><em>Please contact the referred client within 24 hours</em></p>
                         </td>
                     </tr>
@@ -1114,7 +1117,7 @@ Submitted: ${new Date().toLocaleString()}
                         </div>
                         <div class="contact-section">
                             <h3>Need Immediate Assistance?</h3>
-                            <p><a href="tel:3468702912">346-870-2912</a><br/>Available Mon-Fri 9AM-5PM, On Call Sun</p>
+                            <p><a href="tel:7133250885">713-325-0885</a><br/>Available Mon-Fri 9AM-5PM, On Call Sun</p>
                             <p><a href="mailto:${Admin_Email}">${Admin_Email}</a><br/>We respond to emails within 24 hours</p>
                         </div>
                     </td></tr>
@@ -1123,7 +1126,7 @@ Submitted: ${new Date().toLocaleString()}
                     <tr><td class="footer">
                         <p><strong>${Admin_Name}</strong></p>
                         <p>Compassionate Home Care Services</p>
-                        <p><a href="tel:3468702912">346-870-2912</a> | <a href="mailto:${Admin_Email}">${Admin_Email}</a></p>
+                        <p><a href="tel:7133250885">713-325-0885</a> | <a href="mailto:${Admin_Email}">${Admin_Email}</a></p>
                     </td></tr>
                 </table>
             </div>
@@ -1195,7 +1198,7 @@ Submitted: ${new Date().toLocaleString()}
                         </div>
                         <div class="contact-section">
                             <h3>Questions Before Your Consultation?</h3>
-                            <p><a href="tel:3468702912">346-870-2912</a><br/>Available Mon-Fri 9AM-5PM, On Call Sun</p>
+                            <p><a href="tel:7133250885">713-325-0885</a><br/>Available Mon-Fri 9AM-5PM, On Call Sun</p>
                             <p><a href="mailto:${Admin_Email}">${Admin_Email}</a><br/>Our Care Coordinators are standing by</p>
                         </div>
                     </td></tr>
@@ -1204,7 +1207,7 @@ Submitted: ${new Date().toLocaleString()}
                     <tr><td class="footer">
                         <p><strong>${Admin_Name}</strong></p>
                         <p>Licensed • Insured • Trusted</p>
-                        <p><a href="tel:3468702912">346-870-2912</a> | <a href="mailto:${Admin_Email}">${Admin_Email}</a></p>
+                        <p><a href="tel:7133250885">713-325-0885</a> | <a href="mailto:${Admin_Email}">${Admin_Email}</a></p>
                     </td></tr>
                 </table>
             </div>
@@ -1303,7 +1306,7 @@ Submitted: ${new Date().toLocaleString()}
                                 <tr>
                                     <td style="padding: 25px; text-align: center;">
                                         <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: bold; color: #1a1a1a; font-family: Arial, sans-serif;">Questions About Your Referral?</h3>
-                                        <p style="margin: 0 0 10px 0; font-size: 16px; color: #1a1a1a; font-family: Arial, sans-serif;"><a href="tel:3468702912" style="color: #1a1a1a; text-decoration: none; font-weight: bold;">346-870-2912</a><br/>Referral Team - Available Mon-Fri 9AM-5PM</p>
+                                        <p style="margin: 0 0 10px 0; font-size: 16px; color: #1a1a1a; font-family: Arial, sans-serif;"><a href="tel:7133250885" style="color: #1a1a1a; text-decoration: none; font-weight: bold;">713-325-0885</a><br/>Referral Team - Available Mon-Fri 9AM-5PM</p>
                                         <p style="margin: 0; font-size: 16px; color: #1a1a1a; font-family: Arial, sans-serif;"><a href="mailto:${Admin_Email}" style="color: #1a1a1a; text-decoration: none; font-weight: bold;">${Admin_Email}</a><br/>Dedicated referral support</p>
                                     </td>
                                 </tr>
@@ -1317,7 +1320,7 @@ Submitted: ${new Date().toLocaleString()}
                         <td style="text-align: center; padding: 25px 20px; background-color: #1a1a1a; color: #ffffff;">
                             <p style="margin: 5px 0; font-family: Arial, sans-serif;"><strong>${Admin_Name}</strong></p>
                             <p style="margin: 5px 0; font-family: Arial, sans-serif;">Building Trust, One Family at a Time</p>
-                            <p style="margin: 5px 0; font-family: Arial, sans-serif;"><a href="tel:3468702912" style="color: #ffffff; text-decoration: none; font-weight: bold;">346-870-2912</a> | <a href="mailto:${Admin_Email}" style="color: #ffffff; text-decoration: none; font-weight: bold;">${Admin_Email}</a></p>
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;"><a href="tel:7133250885" style="color: #ffffff; text-decoration: none; font-weight: bold;">713-325-0885</a> | <a href="mailto:${Admin_Email}" style="color: #ffffff; text-decoration: none; font-weight: bold;">${Admin_Email}</a></p>
                         </td>
                     </tr>
                     
@@ -1348,7 +1351,7 @@ ${formData.message || 'No message provided'}
 
 ---
 ${Admin_Name}
-346-870-2912
+713-325-0885
 ${Admin_Email}
 `;
     }
@@ -1391,7 +1394,7 @@ Additional Information: ${formData.additionalInfo || 'None provided'}
 
 ---
 ${Admin_Name}
-346-870-2912
+713-325-0885
 ${Admin_Email}
 `;
     }
@@ -1425,7 +1428,7 @@ Terms Agreed: ${formData.agreeToTerms ? 'Yes' : 'No'}
 
 ---
 ${Admin_Name}
-346-870-2912
+713-325-0885
 ${Admin_Email}
 `;
     }
@@ -1451,7 +1454,7 @@ WHAT HAPPENS NEXT:
 4. Care Plan: Together, we'll create a personalized care plan that's right for you
 
 NEED IMMEDIATE ASSISTANCE?
-Phone: 346-870-2912 - Available Mon-Fri 9AM-5PM, On Call Sun
+Phone: 713-325-0885 - Available Mon-Fri 9AM-5PM, On Call Sun
 Email: ${Admin_Email} - We respond within 24 hours
 
 ${Admin_Name}
@@ -1481,7 +1484,7 @@ WHAT TO EXPECT NEXT:
 4. Care start: Begin services as soon as the next business day if needed
 
 QUESTIONS BEFORE YOUR CONSULTATION?
-Phone: 346-870-2912 - Available Mon-Fri 9AM-5PM, On Call Sun
+Phone: 713-325-0885 - Available Mon-Fri 9AM-5PM, On Call Sun
 Email: ${Admin_Email} - Our Care Coordinators are standing by
 
 ${Admin_Name}
@@ -1515,7 +1518,7 @@ As a token of our gratitude, you'll receive a special thank-you gift once your r
 Thank you for being a ${Admin_Name} advocate!
 
 QUESTIONS ABOUT YOUR REFERRAL?
-Phone: 346-870-2912 - Referral Team, Available Mon-Fri 9AM-5PM
+Phone: 713-325-0885 - Referral Team, Available Mon-Fri 9AM-5PM
 Email: ${Admin_Email} - Dedicated referral support
 
 ${Admin_Name}
@@ -1552,7 +1555,7 @@ Houston, TX & Surrounding Communities
             'respite-care': 'Respite Care',
             'specialized-care': 'Specialized Care',
             'inclusive-care': 'Inclusive Care for All Abilities',
-            'in-facility-care': 'In-Facility Care',
+            'post-hospital-support': 'Post-Hospital / Post-Surgery Support',
             'consultation': 'Free Consultation',
             'assessment': 'Care Assessment',
             'not-sure': 'Need Consultation',
@@ -1711,7 +1714,7 @@ Houston, TX & Surrounding Communities
                     <!-- Footer -->
                     <tr>
                         <td style="text-align: center; padding: 25px 20px; background-color: #1a1a1a; color: #ffffff;">
-                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:3468702912" style="color: #ffffff; text-decoration: none; font-weight: bold;">346-870-2912</a> | ${Admin_Email}</p>
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:7133250885" style="color: #ffffff; text-decoration: none; font-weight: bold;">713-325-0885</a> | ${Admin_Email}</p>
                             <p style="margin: 5px 0; opacity: 0.8; font-size: 14px; font-family: Arial, sans-serif;"><em>New newsletter subscriber added to mailing list</em></p>
                         </td>
                     </tr>
@@ -1735,7 +1738,7 @@ Date: ${new Date().toLocaleString()}
 
 ---
 ${Admin_Name}
-346-870-2912
+713-325-0885
 ${Admin_Email}
 `;
     }

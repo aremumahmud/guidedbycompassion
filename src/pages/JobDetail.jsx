@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import careersCopy from '../../copy/careers.json'
+import contactCopy from '../../copy/contact.json'
 
 function JobDetail() {
     const { jobId } = useParams();
@@ -71,23 +72,23 @@ Best regards,
     const jobListings = {
         'caregivers-cna': {
             id: 1,
-            title: "Caregivers/ CNA",
+            title: "Caregivers",
             type: "On-Site",
             location: "On-Site",
-            salary: "Competitive Pay",
+            salary: "",
             posted: "Now Hiring",
             image: careersCopy.images.jobImages['caregivers-cna'],
-            description: "Caregivers/Certified Nursing Assistants (CNA) play a critical role in providing support and assistance to individuals who are unable to care for themselves due to illness, disability, or age. They assist with daily activities, mobility, and offer emotional support and companionship, creating a sense of comfort and security.",
+            description: "Caregivers play a critical role in providing non-medical Personal Assistance Services (PAS) to individuals who need support with daily living activities. They assist with personal care, mobility, homemaking, transportation, and offer emotional support and companionship, creating a sense of comfort and security.",
             responsibilities: [
                 "Assist with activities of daily living (bathing, dressing, grooming)",
                 "Support safe mobility and transfers",
                 "Provide companionship and emotional support",
-                "Monitor and report changes in client condition"
+                "Assist with homemaking tasks and meal preparation",
+                "Transportation assistance for appointments and errands",
+                "Medication reminders (non-medical assistance)"
             ],
             requirements: [
                 "High school diploma or equivalent",
-                "Successful completion of a state-approved CNA training program (If applicable)",
-                "Current certification as a CNA (If applicable)",
                 "Strong communication and interpersonal skills",
                 "Empathy and compassion towards others",
                 "Physical stamina; ability to lift and move clients when necessary",
@@ -95,12 +96,8 @@ Best regards,
                 "Background check and drug screening may be required"
             ],
             benefits: [
-                "Competitive pay and benefits packages",
-                "Flexible work schedules: full-time, part-time, per diem, live-in",
                 "Opportunities for career advancement and professional development",
                 "Rewarding work with meaningful impact",
-                "Job stability and high demand in healthcare",
-                "Health and wellness benefits such as insurance and paid time off",
                 "Supportive, team-oriented work environment",
                 "Ongoing training and education opportunities"
             ]
@@ -223,8 +220,8 @@ Best regards,
                     <div className="job-apply-content" data-aos="fade-up">
                         <h2 className="apply-section-title">Ready to Join Our Team?</h2>
                         <p className="apply-section-description">
-                            Take the next step in your healthcare career. Apply for the {job.title} position today 
-                            and become part of our compassionate care team.
+                            Take the next step in your caregiving career. Apply for the {job.title} position today 
+                            and become part of our compassionate Personal Assistance Services team.
                         </p>
                         <button 
                             className="apply-btn-large"
@@ -238,8 +235,8 @@ Best regards,
                                 {import.meta.env.VITE_ADMIN_EMAIL || 'info@example.com'}
                             </a>{' '}
                             or call{' '}
-                            <a href="tel:2108973276" className="phone-link">
-                                (210) 897-3276
+                            <a href={contactCopy.contactDetails.phoneLink} className="phone-link">
+                                {contactCopy.contactDetails.phone}
                             </a>
                         </p>
                     </div>

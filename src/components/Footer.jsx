@@ -52,21 +52,25 @@ function Footer() {
                     <div className="footer-section">
                         <h4 className="footer-heading">{homeCopy.footer.sections.quickLinks.title}</h4>
                         <ul className="footer-links">
-                            {homeCopy.footer.sections.quickLinks.links.map((link, index) => (
-                                <li key={index}>
-                                    {link === "Refer Us" ? (
-                                        <Link to="/refer-us">{link}</Link>
-                                    ) : (
-                                        <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                        <h4 className="footer-heading legal-heading">{homeCopy.footer.sections.legal.title}</h4>
-                        <ul className="footer-links">
-                            {homeCopy.footer.sections.legal.links.map((link, index) => (
-                                <li key={index}><a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a></li>
-                            ))}
+                            {homeCopy.footer.sections.quickLinks.links.map((link, index) => {
+                                let linkElement;
+                                if (link === "Refer Us") {
+                                    linkElement = <Link to="/refer-us">{link}</Link>;
+                                } else if (link === "About Us") {
+                                    linkElement = <Link to="/about">{link}</Link>;
+                                } else if (link === "Our Services") {
+                                    linkElement = <Link to="/services">{link}</Link>;
+                                } else if (link === "Careers") {
+                                    linkElement = <Link to="/careers">{link}</Link>;
+                                } else if (link === "Blog") {
+                                    linkElement = <Link to="/blogs">{link}</Link>;
+                                } else if (link === "Contact") {
+                                    linkElement = <Link to="/contact">{link}</Link>;
+                                } else {
+                                    linkElement = <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a>;
+                                }
+                                return <li key={index}>{linkElement}</li>;
+                            })}
                         </ul>
                     </div>
 

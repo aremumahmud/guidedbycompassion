@@ -1,4 +1,11 @@
 {
+  "contactDetails": {
+    "phone": "713-325-0885",
+    "phoneFormatted": "713-325-0885",
+    "phoneLink": "tel:7133250885",
+    "email": "contact@guidedbycompassion.com",
+    "emailLink": "mailto:contact@guidedbycompassion.com"
+  },
   "images": {
     "hero": {
       "main": "/assets/p1.jpg"
@@ -22,9 +29,9 @@
       {
         "icon": "📞",
         "title": "Call Us",
-        "details": "346-870-2912",
+        "details": "713-325-0885",
         "subtext": "Available during business hours",
-        "link": "tel:+13468702912"
+        "link": "tel:7133250885"
       },
       {
         "icon": "📧",
@@ -43,8 +50,8 @@
       {
         "icon": "🕐",
         "title": "Business Hours",
-        "details": "Mon-Fri: 9AM-5PM, Sat: Closed, Sun: On Call",
-        "subtext": "On call support available on Sundays",
+        "details": "Mon-Fri: 8AM-5PM, Sat & Sun: On Call",
+        "subtext": "On call support available on weekends",
         "link": null
       }
     ],
@@ -91,7 +98,7 @@
         { "value": "personal-care", "label": "Personal Assistance Services (PAS)" },
         { "value": "companion-care", "label": "Companionship & Emotional Support" },
         { "value": "respite-care", "label": "Respite & Family Relief Care" },
-        { "value": "in-facility-care", "label": "In-Facility Care" },
+        { "value": "post-hospital-support", "label": "Post-Hospital / Post-Surgery Support" },
         { "value": "specialized-care", "label": "Specialty Service Packages" },
         { "value": "end-of-life-care", "label": "End-of-Life Care" },
         { "value": "consultation", "label": "Free Consultation" },

@@ -4,6 +4,7 @@ import GooeyBtn from './gooeybtn'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import homeCopy from '../../copy/home.json'
+import contactCopy from '../../copy/contact.json'
 
 function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -14,7 +15,7 @@ function Header() {
     { name: homeCopy.header.servicesDropdown.personalCare, href: '/services/personal-care' },
     { name: homeCopy.header.servicesDropdown.companionCare, href: '/services/companion-care' },
     { name: homeCopy.header.servicesDropdown.respiteCare, href: '/services/respite-care' },
-    { name: homeCopy.header.servicesDropdown.inFacilityCare, href: '/services/in-facility-care' },
+    { name: homeCopy.header.servicesDropdown.postHospitalSupport, href: '/services/post-hospital-support' },
     { name: homeCopy.header.servicesDropdown.specializedCare, href: '/services/specialized-care' },
     { name: homeCopy.header.servicesDropdown.endOfLifeCare, href: '/services/end-of-life-care' }
   ];
@@ -71,14 +72,14 @@ function Header() {
       <div className="top-banner">
         <div className="top-banner-container">
           <div className="top-banner-content">
-            <a href="tel:346-870-2912" className="top-banner-item" title="Call us">
+            <a href={contactCopy.contactDetails.phoneLink} className="top-banner-item" title="Call us">
               <span className="top-banner-icon">📞</span>
-              <span className="top-banner-text desktop-only">346-870-2912</span>
-              <span className="top-banner-number mobile-only">346-870-2912</span>
+              <span className="top-banner-text desktop-only">{contactCopy.contactDetails.phone}</span>
+              <span className="top-banner-number mobile-only">{contactCopy.contactDetails.phone}</span>
             </a>
-            <a href="mailto:contact@guidedbycompassion.com" className="top-banner-item" title="Email us">
+            <a href={contactCopy.contactDetails.emailLink} className="top-banner-item" title="Email us">
               <span className="top-banner-icon">📧</span>
-              <span className="top-banner-text desktop-only">contact@guidedbycompassion.com</span>
+              <span className="top-banner-text desktop-only">{contactCopy.contactDetails.email}</span>
               <span className="top-banner-icon-only mobile-only">📧</span>
             </a>
           </div>

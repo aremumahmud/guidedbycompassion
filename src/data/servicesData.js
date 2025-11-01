@@ -111,31 +111,31 @@ export const servicesData = {
     ctaButton: "Schedule Respite Care"
   },
 
-  "in-facility-care": {
-    id: "in-facility-care",
-    title: "In-Facility Care",
-    subtitle: "Supplemental care for residents in assisted living or skilled nursing facilities",
-    description: "One-on-one companionship, advocacy, and personalized attention for individuals in care facilities who need additional support beyond standard facility services.",
+  "post-hospital-support": {
+    id: "post-hospital-support",
+    title: "Post-Hospital / Post-Surgery Support",
+    subtitle: "Comprehensive recovery assistance after hospital stays and surgical procedures",
+    description: "Professional in-home care support to help individuals recover safely and comfortably after hospital discharge or surgical procedures, ensuring a smooth transition back home.",
     whatWeProvide: [
-      "One-on-one companionship and advocacy",
-      "Help with eating, grooming, and personal care",
-      "Monitoring to ensure safety and comfort",
-      "Communication with facility staff",
-      "Additional attention and supervision",
-      "Family liaison and updates",
-      "Supplemental care coordination",
-      "Extra support during recovery or adjustment periods"
+      "Assistance during recovery at home after hospital discharge",
+      "Mobility and comfort support post-surgery",
+      "Reminders for medication and follow-up medical visits",
+      "Meal preparation and rest assistance",
+      "Personal care assistance during recovery",
+      "Monitoring for safety and complications",
+      "Transportation to follow-up appointments",
+      "Coordination with healthcare providers"
     ],
     keyBenefits: [
-      "Provides additional personalized attention",
-      "Ensures quality care and advocacy",
-      "Supplements facility care services",
+      "Smooth transition from hospital to home",
+      "Reduces risk of readmission",
+      "Professional recovery support",
       "Peace of mind for families",
-      "Enhanced care coordination"
+      "Enhanced healing in familiar environment"
     ],
-    ctaTitle: "Ready for Enhanced Facility Care?",
-    ctaDescription: "Ensure your loved one receives the extra attention and care they deserve in their facility.",
-    ctaButton: "Learn About In-Facility Care"
+    ctaTitle: "Ready for Post-Hospital Support?",
+    ctaDescription: "Ensure a safe and smooth recovery at home with our professional post-hospital and post-surgery care support.",
+    ctaButton: "Learn About Post-Hospital Support"
   },
 
   "specialized-care": {
@@ -212,7 +212,7 @@ export const servicesList = [
   { id: "personal-care", name: "Personal Assistance Services (PAS)", shortName: "Personal Care & Daily Living" },
   { id: "companion-care", name: "Companionship & Emotional Support", shortName: "Companionship & Wellness" },
   { id: "respite-care", name: "Respite & Family Relief Care", shortName: "Respite & 24-Hour Care" },
-  { id: "in-facility-care", name: "In-Facility Care", shortName: "In-Facility Care" },
+  { id: "post-hospital-support", name: "Post-Hospital / Post-Surgery Support", shortName: "Post-Hospital Support" },
   { id: "specialized-care", name: "Specialty Service Packages", shortName: "Specialty Care Packages" },
   { id: "end-of-life-care", name: "End-of-Life Care", shortName: "End-of-Life Care" }
 ];

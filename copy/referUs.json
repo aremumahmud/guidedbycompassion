@@ -124,7 +124,7 @@
         { "value": "companion-care", "label": "Companionship & Emotional Support" },
         { "value": "respite-care", "label": "Respite & Family Relief Care" },
         { "value": "specialized-care", "label": "Specialty Service Packages" },
-        { "value": "in-facility-care", "label": "In-Facility Care" },
+        { "value": "post-hospital-support", "label": "Post-Hospital / Post-Surgery Support" },
         { "value": "end-of-life-care", "label": "End-of-Life Care" },
         { "value": "assessment", "label": "Care Assessment" },
         { "value": "not-sure", "label": "Not Sure - Need Consultation" }
@@ -160,7 +160,7 @@
       {
         "icon": "📞",
         "title": "Call Us",
-        "details": "346-870-2912",
+        "details": "713-325-0885",
         "subtitle": "Available during business hours"
       },
       {

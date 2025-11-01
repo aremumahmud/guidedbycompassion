@@ -45,10 +45,10 @@ function getAboutDataFallback() {
       titleHighlight: "for Your Peace of Mind",
       description: "At Guided by Compassion, we believe that everyone deserves to age gracefully and comfortably in the place they call home. We provide compassionate, professional home care services to families throughout the Houston, Texas area.",
       stats: [
-        { number: "300+", label: "Houston Families Served" },
-        { number: "3+", label: "Years Serving Houston" },
-        { number: "35+", label: "Certified Caregivers" },
-        { number: "98%", label: "Client Satisfaction Rate" }
+        { number: "NEW", label: "Starting Fresh" },
+        { number: "2026", label: "Founded" },
+        { number: "Growing", label: "Care Team" },
+        { number: "100%", label: "Dedicated to Excellence" }
       ]
     },
     mission: {
@@ -60,8 +60,8 @@ function getAboutDataFallback() {
       title: "Our Story",
       paragraphs: [
         "Guided by Compassion was born from a simple yet profound realization: that the best care happens when people can remain in the place they love most - their home. Our team witnessed firsthand the challenges families face when trying to provide quality care for their loved ones while maintaining their independence and dignity.",
-        "What started as a personal mission to help families in Houston has grown into a comprehensive home care provider that has touched the lives of hundreds of families. We've built our reputation on trust, reliability, and genuine care - values that guide every interaction we have with our clients and their families.",
-        "Today, we're proud to be a trusted provider of home care services in Houston and surrounding areas, known for our professional approach and compassionate care for individuals with diverse needs and abilities."
+        "We are a new Personal Assistance Services provider dedicated to making a meaningful difference in the lives of Houston families. From day one, we're committed to building our reputation on trust, reliability, and genuine care - values that guide every interaction we have with our clients and their families.",
+        "As we begin this journey, we're excited to bring compassionate, professional Personal Assistance Services to Houston and surrounding areas. Our fresh start means we can focus entirely on delivering exceptional care tailored to each client's unique needs, ensuring every family receives the personalized attention they deserve."
       ]
     },
     values: {

@@ -35,13 +35,9 @@ function getCareersDataFallback() {
     hero: {
       badge: "Careers",
       title: "Join Our",
-      titleHighlight: "Home Care Team",
-      description: "Make a meaningful difference in people's lives while building a rewarding career in home care. We're looking for compassionate, dedicated caregivers to join our growing team in Houston.",
-      stats: [
-        { number: "Competitive", label: "Pay" },
-        { number: "Flexible", label: "Scheduling" },
-        { number: "Full Benefits", label: "Package Available" }
-      ]
+      titleHighlight: "Care Team",
+      description: "Make a meaningful difference in people's lives while building a rewarding career in Personal Assistance Services (PAS). We're looking for compassionate, dedicated caregivers to join our growing team in Houston.",
+      stats: []
     },
     jobListings: {
       title: "Current Openings",
@@ -50,32 +46,32 @@ function getCareersDataFallback() {
         {
           id: 1,
           slug: "home-care-assistant-full-time",
-          title: "Home Care Assistant",
+          title: "Caregiver",
           type: "Full-time",
           location: "Houston, TX & Surrounding Areas",
-          salary: "Competitive Pay",
+          salary: "",
           posted: "Now Hiring",
-          description: "Join our compassionate team and make a meaningful difference in the lives of our clients. We're seeking dedicated Home Care Assistants who are passionate about providing exceptional care to seniors and individuals with disabilities in the comfort of their own homes in Houston."
+          description: "Join our compassionate team and make a meaningful difference in the lives of our clients. We're seeking dedicated Caregivers who are passionate about providing exceptional Personal Assistance Services (PAS) to seniors and individuals with disabilities in the comfort of their own homes in Houston."
         },
         {
           id: 2,
           slug: "home-care-assistant-part-time",
-          title: "Home Care Assistant",
+          title: "Caregiver",
           type: "Part-time",
           location: "Houston, TX & Surrounding Areas",
-          salary: "Competitive Pay",
+          salary: "",
           posted: "Now Hiring",
-          description: "We are seeking compassionate Home Care Assistants to provide professional care in clients' homes in Houston. This position offers the opportunity to build meaningful relationships with clients and their families while delivering high-quality home care services."
+          description: "We are seeking compassionate Caregivers to provide professional Personal Assistance Services (PAS) in clients' homes in Houston. This position offers the opportunity to build meaningful relationships with clients and their families while delivering high-quality non-medical care services."
         },
         {
           id: 3,
           slug: "home-care-assistant-weekend",
-          title: "Home Care Assistant",
+          title: "Caregiver",
           type: "Weekend Shifts",
           location: "Houston, TX & Surrounding Areas",
-          salary: "Competitive Pay",
+          salary: "",
           posted: "Now Hiring",
-          description: "Looking for weekend Home Care Assistants to join our team. Provide essential care and companionship to clients during weekend hours while maintaining a flexible schedule that works for you."
+          description: "Looking for weekend Caregivers to join our team. Provide essential Personal Assistance Services (PAS) and companionship to clients during weekend hours."
         }
       ],
       buttons: {

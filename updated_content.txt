@@ -1,16 +1,45 @@
-SERVICES OFFERED
+Website Modifications
 
-All services under PAS and I will have a specialty service package for specialty services such as Alzheimer’s and dementia bedbound other things like that
+ 
 
+1. Please make the logo a bit bigger
+2. Remove satisfaction statistics, satisfaction rate, number of caregivers, number of service areas, and number of people served in whichever sections of the website.
+3. Remove the category In-Facility Care and replace with Post-Hospital / Post-Surgery Support
+4. Remove the Medication Management article. We can only provide reminders, etc. not management, only Medication reminders.
+5. Remove In-Facility check box option form the schedule your Consultation form and replace it with Post-Hospital / Post-Surgery Support
+7. Remove In-Facility from the Contact form and replace it with Post-Hospital / Post-Surgery Support
+8. Business hours are 8-5
+9. When submitting a test Contact form I get an error message: “Sorry, there was an error submitting your consultation request. Please try again or call us directly at (832) 446-0705.”
+10. Frequently Asked Questions:
+What areas in Houston do you serve?
+Change to: We proudly serve the Great Houston area and surrounding communities including Harris, Montgomery, and Galveston counties. Our goal is to bring professional home care services directly to your doorstep throughout the greater Houston area.
+11. Frequently Asked Questions:
+Change to: Are licensed and insured in Texas?
+Change to: Guided by Compassion is fully licensed and insured to provide peace of mind for you and your family. All of our caregivers are trained, thoroughly background-checked, and bonded.
+12. Frequently Asked Questions:
+What are your business hours?
+Change to: Our business hours are Monday to Friday (8am to 5pm), and On Call on the Weekends. We offer flexible scheduling to meet your care needs.
 
-My domain is:
+13. Can I meet the caregiver before service begins?
+Remove this question
+14. The Contact Us button at the bottom of Frequently Asked Questions does not work.
+15. On the footer bottom of the website change certified caregivers to qualified caregivers and also add caregiver matching
+16. On the footer bottom of the website remove In-Facility Care and replace with Post-Hospital / Post-Surgery Support
+17. On the footer bottom of the website remove Legal, Privacy Policy, and Terms & Conditions
+18. On the footer bottom of the website change © 2024 Guided by Compassion. All rights reserved to the year 2026
+19. On the footer bottom of the website change business hours to 8am-5pm and put Sat and Sunday on call.
+20. The links at the bottom of the website footer do not work
+21. At the bottom of the About page where it says Our Commitment to Excellence in Home Care Services Licensed & Insured (change this to Qualified & Insured)
+22. All our home care caregivers are thoroughly vetted, licensed (change to qualified), and insured for your peace of mind in Houston.
+23. Add to Facts and Questions:
+What makes your agency different from other home care providers?
+At Guided by Compassion Home Care, we combine professional care with genuine heart, where safety, comfort, and respect come first. Families work directly with our small, dedicated team—no call centers or corporate layers—so every decision is made with compassion and personal attention.
 
-guidedbycompassion.com
+24. Add to Facts and Questions:
+How do you screen and train your caregivers?
+All caregivers undergo thorough background checks, reference verification, and skills assessments before hire. Once onboard, they receive hands-on training focused on safety, communication, and compassionate, client-centered care.
+25. Add to Facts and Questions:
+What happens if my caregiver can’t make it to a shift?
+Life happens, and if a caregiver is unavailable, our care team will do our best to immediately arrange a qualified replacement and keeps you informed every step of the way. We make sure care continues smoothly so your loved one is never left without support.
 
-
-Main Email:
-
-contact@guidedbycompassion.com
-
-
-My colors will be a medium to dark purple and teal
+ 

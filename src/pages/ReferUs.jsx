@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import FAQ from '../components/FAQ'
 import emailService from '../services/emailService'
 import referUsCopy from '../../copy/referUs.json'
+import contactCopy from '../../copy/contact.json'
 
 function ReferUs() {
     const [formData, setFormData] = useState({
@@ -84,11 +85,11 @@ function ReferUs() {
                 }, 5000);
             } else {
                 console.error('Failed to send referral form:', adminResult.error);
-                alert('Sorry, there was an error submitting your referral. Please try again or call us directly at (832) 446-0705.');
+                alert(`Sorry, there was an error submitting your referral. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
             }
         } catch (error) {
             console.error('Referral form submission error:', error);
-            alert('Sorry, there was an error submitting your referral. Please try again or call us directly at (832) 446-0705.');
+            alert(`Sorry, there was an error submitting your referral. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
         } finally {
             setIsSubmitting(false);
         }
@@ -431,7 +432,7 @@ function ReferUs() {
                                     <div className="contact-icon">{item.icon}</div>
                                     <h3>{item.title}</h3>
                                     {item.title === "Call Us" || item.title === "Email Us" ? (
-                                        <a href={item.title === "Call Us" ? "tel:8324460705" : "mailto:referrals@journey-of-care.com"} className="contact-link">{item.details}</a>
+                                        <a href={item.title === "Call Us" ? contactCopy.contactDetails.phoneLink : contactCopy.contactDetails.emailLink} className="contact-link">{item.details}</a>
                                     ) : (
                                         <p className="contact-text">{item.details}</p>
                                     )}

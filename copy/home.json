@@ -75,7 +75,7 @@
       "personalCare": "Personal Assistance Services (PAS)",
       "companionCare": "Companionship & Emotional Support",
       "respiteCare": "Respite & Family Relief Care",
-      "inFacilityCare": "In-Facility Care",
+      "postHospitalSupport": "Post-Hospital / Post-Surgery Support",
       "specializedCare": "Specialty Service Packages",
       "endOfLifeCare": "End-of-Life Care"
     },
@@ -97,7 +97,7 @@
     "imageOverlay": {
       "badges": {
         "personalCare": "PERSONAL CARE",
-        "homeHealthCare": "HOME HEALTH CARE",
+        "homeHealthCare": "PERSONAL ASSISTANCE SERVICES",
         "houstonTX": "HOUSTON, TX"
       }
     },
@@ -152,8 +152,8 @@
     "titleHighlight": "for Your Peace of Mind",
     "description": "At Guided by Compassion, we believe home is where care feels most meaningful. That's why we provide 13 comprehensive in-home care services—from personal care and homemaking to specialized memory care and 24-hour support—designed to meet the unique needs of each client and their family. Serving Houston, Texas and surrounding communities, we are committed to helping clients live comfortably and independently while giving families the reassurance they deserve.",
     "imageOverlay": {
-      "yearsExperience": "3+",
-      "yearsLabel": "Years Serving Houston"
+      "yearsExperience": "NEW",
+      "yearsLabel": "Starting Fresh in Houston"
     }
   },
   "services": {
@@ -208,19 +208,19 @@
         "learnMore": "Learn more about respite care"
       },
       {
-        "title": "In-Facility Care",
-        "description": "Supplemental care for residents in assisted living or skilled nursing facilities. One-on-one companionship, advocacy, personalized attention, help with eating/grooming, monitoring safety and comfort, family liaison, and communication with facility staff.",
+        "title": "Post-Hospital / Post-Surgery Support",
+        "description": "Professional in-home care support to help individuals recover safely and comfortably after hospital discharge or surgical procedures. Includes assistance during recovery, mobility support, medication reminders, meal preparation, and coordination with healthcare providers.",
         "detailedServices": [
-          "One-on-one companionship and advocacy in facilities",
-          "Personal care assistance: eating, grooming, hygiene support",
-          "Safety monitoring and comfort checks with facility coordination",
-          "Family liaison and regular updates on care progress"
+          "Recovery assistance after hospital discharge",
+          "Post-surgery mobility and comfort support",
+          "Medication reminders and follow-up visit coordination",
+          "Meal preparation and rest assistance during recovery"
         ],
         "stats": {
           "clients": "60+",
           "satisfaction": "96%"
         },
-        "learnMore": "Learn more about in-facility care"
+        "learnMore": "Learn more about post-hospital support"
       },
       {
         "title": "Specialty Service Packages",
@@ -423,7 +423,7 @@
       {
         "icon": "📞",
         "title": "Call Us",
-        "details": "346-870-2912",
+        "details": "713-325-0885",
         "subtext": "Mon-Fri: 9AM-5PM, On Call Sundays"
       },
       {
@@ -446,7 +446,7 @@
         "Personal Assistance Services (PAS)",
         "Companionship & Emotional Support",
         "Respite & Family Relief Care",
-        "In-Facility Care",
+        "Post-Hospital / Post-Surgery Support",
         "Specialty Service Packages",
         "End-of-Life Care",
         "Free Consultation"
@@ -474,15 +474,15 @@
     "questions": [
       {
         "question": "What home care services does Guided by Compassion provide?",
-        "answer": "We offer 13 comprehensive home care services grouped into 6 categories: (1) Personal Assistance Services (PAS) - personal care, homemaking, transportation & errands, medication reminders; (2) Companionship & Emotional Support - social engagement, wellness check-ins, optional pet care; (3) Respite & Family Relief Care - hourly, overnight, and 24-hour care options; (4) In-Facility Care - supplemental support in assisted living/nursing facilities; (5) Specialty Service Packages - memory/cognitive care, bedbound care, post-hospital recovery, preferred caregiver matching; (6) End-of-Life Care - comfort and dignity-focused care. All services are provided by certified, background-checked caregivers in Houston."
+        "answer": "We offer 13 comprehensive home care services grouped into 6 categories: (1) Personal Assistance Services (PAS) - personal care, homemaking, transportation & errands, medication reminders; (2) Companionship & Emotional Support - social engagement, wellness check-ins, optional pet care; (3) Respite & Family Relief Care - hourly, overnight, and 24-hour care options; (4) Post-Hospital / Post-Surgery Support - recovery assistance after hospital discharge or surgical procedures; (5) Specialty Service Packages - memory/cognitive care, bedbound care, preferred caregiver matching; (6) End-of-Life Care - comfort and dignity-focused care. All services are provided by certified, background-checked caregivers in Houston."
       },
       {
         "question": "What areas in Houston do you serve?",
-        "answer": "We proudly serve Houston, Texas and surrounding areas including Katy, Sugar Land, The Woodlands, Cypress, and Pearland. Our goal is to bring professional home care services directly to your doorstep throughout the greater Houston area."
+        "answer": "We proudly serve the Great Houston area and surrounding communities including Harris, Montgomery, and Galveston counties. Our goal is to bring professional home care services directly to your doorstep throughout the greater Houston area."
       },
       {
-        "question": "Are your caregivers licensed and insured?",
-        "answer": "Yes, all our caregivers are certified in home care services, thoroughly background-checked, and bonded. Guided by Compassion is fully licensed and insured to provide peace of mind for you and your family."
+        "question": "Are you licensed and insured in Texas?",
+        "answer": "Guided by Compassion is fully licensed and insured to provide peace of mind for you and your family. All of our caregivers are trained, thoroughly background-checked, and bonded."
       },
       {
         "question": "How do you create personalized care plans?",
@@ -494,15 +494,23 @@
       },
       {
         "question": "What are your business hours?",
-        "answer": "Our business hours are Monday to Friday (9am to 5pm), Closed on Saturdays, and On Call on Sundays. We offer flexible scheduling to meet your care needs."
-      },
-      {
-        "question": "Can I meet the caregiver before services begin?",
-        "answer": "Absolutely! We believe in the importance of compatibility and trust. We'll arrange for you to meet potential caregivers before services begin to ensure the best possible match for your family's needs."
+        "answer": "Our business hours are Monday to Friday (8am to 5pm), and On Call on the Weekends. We offer flexible scheduling to meet your care needs."
       },
       {
         "question": "What if I'm not satisfied with the caregiver?",
         "answer": "Your satisfaction is our priority. If you're not completely satisfied with your caregiver, we'll work with you to address concerns and, if necessary, provide a replacement caregiver at no additional cost."
+      },
+      {
+        "question": "What makes your agency different from other home care providers?",
+        "answer": "At Guided by Compassion Home Care, we combine professional care with genuine heart, where safety, comfort, and respect come first. Families work directly with our small, dedicated team—no call centers or corporate layers—so every decision is made with compassion and personal attention."
+      },
+      {
+        "question": "How do you screen and train your caregivers?",
+        "answer": "All caregivers undergo thorough background checks, reference verification, and skills assessments before hire. Once onboard, they receive hands-on training focused on safety, communication, and compassionate, client-centered care."
+      },
+      {
+        "question": "What happens if my caregiver can't make it to a shift?",
+        "answer": "Life happens, and if a caregiver is unavailable, our care team will do our best to immediately arrange a qualified replacement and keeps you informed every step of the way. We make sure care continues smoothly so your loved one is never left without support."
       }
     ],
     "ctaSection": {
@@ -515,8 +523,9 @@
     "companyName": "Guided by Compassion",
     "companyDescription": "Providing reliable care for your peace of mind in Houston and surrounding areas. Offering 13 comprehensive home care services including personal assistance, companionship, respite care, specialized memory care, and 24-hour support. Bringing compassionate caregivers to your doorstep with dignity, respect, and genuine human connection.",
     "badges": [
-      "Licensed & Insured",
-      "Certified Caregivers",
+      "Qualified & Insured",
+      "Qualified Caregivers",
+      "Caregiver Matching",
       "Personalized Care Plans"
     ],
     "sections": {
@@ -526,7 +535,7 @@
           "Personal Assistance Services (PAS)",
           "Companionship & Emotional Support",
           "Respite & Family Relief Care",
-          "In-Facility Care",
+          "Post-Hospital / Post-Surgery Support",
           "Specialty Service Packages",
           "End-of-Life Care"
         ],
@@ -543,32 +552,25 @@
           "Refer Us"
         ]
       },
-      "legal": {
-        "title": "Legal",
-        "links": [
-          "Privacy Policy",
-          "Terms & Conditions"
-        ]
-      },
       "contactInfo": {
         "title": "Contact Information",
         "serviceArea": "Houston, Texas and surrounding areas",
-        "phone": "346-870-2912",
+        "phone": "713-325-0885",
         "email": "contact@guidedbycompassion.com"
       },
       "businessHours": {
         "title": "Business Hours",
         "weekdays": {
           "days": "Monday - Friday:",
-          "hours": "9:00 AM – 5:00 PM"
+          "hours": "8:00 AM – 5:00 PM"
         },
         "weekends": {
-          "days": "Saturday:",
-          "hours": "Closed"
+          "days": "Saturday & Sunday:",
+          "hours": "On Call"
         },
         "emergency": {
-          "days": "Sunday:",
-          "hours": "On Call"
+          "days": "",
+          "hours": ""
         }
       }
     },
@@ -578,7 +580,7 @@
       "emailPlaceholder": "Enter your email address",
       "subscribeButton": "Subscribe"
     },
-    "copyright": "© 2024 Guided by Compassion. All rights reserved.",
-    "tagline": "Serving the areas of Houston, Texas. Experts in providing compassionate in-home care. Offering 13 comprehensive services: personal care assistance, homemaking, transportation & errands, medication reminders, companionship & emotional support, wellness check-ins, pet assistance, respite & family relief, overnight & 24-hour care, in-facility care, memory & cognitive care, bedbound care, post-hospital recovery, and preferred caregiver matching."
+    "copyright": "© 2026 Guided by Compassion. All rights reserved.",
+    "tagline": "Serving the areas of Houston, Texas. Experts in providing compassionate in-home care. Offering 13 comprehensive services: personal care assistance, homemaking, transportation & errands, medication reminders, companionship & emotional support, wellness check-ins, pet assistance, respite & family relief, overnight & 24-hour care, post-hospital/post-surgery support, memory & cognitive care, bedbound care, and preferred caregiver matching."
   }
 }

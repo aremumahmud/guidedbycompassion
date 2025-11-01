@@ -2,6 +2,7 @@ import './Contact.css'
 import { useState } from 'react'
 import emailService from '../services/emailService'
 import homeCopy from '../../copy/home.json'
+import contactCopy from '../../copy/contact.json'
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -64,11 +65,11 @@ function Contact() {
                 }, 5000);
             } else {
                 console.error('Failed to send contact form:', adminResult.error);
-                alert('Sorry, there was an error sending your message. Please try again or call us directly at (832) 446-0705.');
+                alert(`Sorry, there was an error sending your message. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
             }
         } catch (error) {
             console.error('Contact form submission error:', error);
-            alert('Sorry, there was an error sending your message. Please try again or call us directly at (832) 446-0705.');
+            alert(`Sorry, there was an error sending your message. Please try again or call us directly at ${contactCopy.contactDetails.phone}.`);
         } finally {
             setIsSubmitting(false);
         }
