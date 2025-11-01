@@ -78,14 +78,15 @@ function Hero() {
                     />
 
                     <div className="whole_page">
-                        <div className="top resp_top">
+                        {/* <div className="top resp_top">
                             <div className="group">
                                 <div data-aos="fade-up" data-aos-delay="600" className="blur_badge">{homeCopy.hero.imageOverlay.badges.personalCare}</div>
                                 <div data-aos="fade-up" data-aos-delay="700" className="blur_badge">{homeCopy.hero.imageOverlay.badges.homeHealthCare}</div>
                             </div>
                             <div data-aos="fade-up" data-aos-delay="800" className="blur_badge">{homeCopy.hero.imageOverlay.badges.houstonTX}</div>
 
-                        </div>
+                        </div> */}
+                        <div></div>
                         <div className="bottom">
 
                             <div data-aos="fade-up" data-aos-delay="900" className="blur_arrow">
