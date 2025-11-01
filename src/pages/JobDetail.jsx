@@ -57,13 +57,16 @@ PROFESSIONAL REFERENCES:
 
 ADDITIONAL INFORMATION:
 - Availability (Days & Times): [Please specify your availability]
-- How did you hear about our company?: [Please provide]
+- Trainings or Certifications: [Please list any trainings or certifications that apply to this position, e.g., CNA certification, First Aid/CPR, Dementia Care Training, etc.]
 - Have you ever been convicted of a felony in the last (5) years?: [Please explain]
 - Are you legally eligible for employment in the United States?: [Please confirm]
+- How did you hear about our company?: [Please provide]
 
 I have attached my resume and CV. I am excited about the opportunity to make a meaningful difference in the lives of clients while building a rewarding career in caregiving.
 
 Thank you for considering my application. I look forward to hearing from you soon.
+
+
 
 Best regards,
 [Your Full Name]

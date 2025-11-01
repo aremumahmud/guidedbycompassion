@@ -18,10 +18,51 @@ function Careers() {
         const subject = encodeURIComponent(`Application for ${position}`);
         const body = encodeURIComponent(`Dear Hiring Manager,
 
-I am interested in applying for the ${position} position. Please find my resume attached and let me know if you need any additional information.
+I am writing to express my interest in the ${position} position.
+
+PERSONAL INFORMATION:
+- First Name: [Please provide]
+- Last Name: [Please provide]
+- Email: [Please provide]
+- Mobile Phone: [Please provide]
+- Address: [Please provide]
+- City, State, Postal Code: [Please provide]
+- Date of Birth: [Please provide]
+- Location: [Please provide]
+- Hours wanted weekly: [Please provide]
+
+EDUCATION & TRAINING:
+- High School: [Yes/No]
+- College: [Yes/No]
+- School: [Please provide]
+- Degree Received: [Please provide]
+
+EMPLOYMENT HISTORY:
+- Previous Employer: [Please provide]
+- Supervisor: [Please provide]
+- Phone Number: [Please provide]
+- Dates of Employment: [Please provide]
+
+PROFESSIONAL REFERENCES:
+- Name: [Please provide]
+- Phone Number: [Please provide]
+
+ADDITIONAL INFORMATION:
+- Availability (Days & Times): [Please specify your availability]
+- Trainings or Certifications: [Please list any trainings or certifications that apply to this position, e.g., CNA certification, First Aid/CPR, Dementia Care Training, etc.]
+- Have you ever been convicted of a felony in the last (5) years?: [Please explain]
+- Are you legally eligible for employment in the United States?: [Please confirm]
+
+I have attached my resume and CV. I am excited about the opportunity to make a meaningful difference in the lives of clients while building a rewarding career in caregiving.
+
+Thank you for considering my application. I look forward to hearing from you soon.
+
+How did you hear about our company?: [Please provide]
 
 Best regards,
-[Your Name]`);
+[Your Full Name]
+[Your Phone Number]
+[Your Email Address]`);
         
         window.location.href = `mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'info@example.com'}?subject=${subject}&body=${body}`;
     };
