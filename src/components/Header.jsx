@@ -119,7 +119,7 @@ function Header() {
               </div>
             </li>
             <li><Link to="/careers" className="nav-link">{homeCopy.header.navigation.careers}</Link></li>
-            <li><a href="/blogs" className="nav-link">{homeCopy.header.navigation.blog}</a></li>
+            <li><Link to="/blogs" className="nav-link">{homeCopy.header.navigation.blog}</Link></li>
             <li><Link to="/refer-us" className="nav-link">{homeCopy.header.navigation.referUs}</Link></li>
           </ul>
         </nav>

@@ -55,14 +55,14 @@ function Refer() {
                     
                     <div className="refer-image" data-aos="fade-left" data-aos-delay="300">
                         <img src={homeCopy.images.refer.main} alt="Caregiver helping senior" />
-                        <div className="image-overlay">
+                        {/* <div className="image-overlay">
                             <div className="overlay-content">
                                 <div className="overlay-text">
                                     <span className="overlay-main">{homeCopy.refer.imageOverlay.mainText}</span>
                                     <span className="overlay-sub">{homeCopy.refer.imageOverlay.subText}</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
