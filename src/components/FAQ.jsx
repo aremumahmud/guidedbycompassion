@@ -1,9 +1,12 @@
 import './FAQ.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function FAQ() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const [openItem, setOpenItem] = useState(null);
 
     const faqs = homeCopy.faq.questions.map((faq, index) => ({

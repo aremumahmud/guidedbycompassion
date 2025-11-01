@@ -1,8 +1,11 @@
 import './Statistics.css'
 import { useState, useEffect } from 'react'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Statistics() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const [counters, setCounters] = useState({
         families: 0,
         caregivers: 0,

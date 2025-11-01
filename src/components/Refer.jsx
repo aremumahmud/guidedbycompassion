@@ -1,8 +1,11 @@
 import './Refer.css'
 import { Link } from 'react-router-dom'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Refer() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const referralReasons = homeCopy.refer.reasons.map((reason, index) => ({
         id: index + 1,
         title: reason.title,

@@ -1,10 +1,14 @@
 import './Contact.css'
 import { useState } from 'react'
 import emailService from '../services/emailService'
-import homeCopy from '../../copy/home.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function Contact() {
+    const { homeData, contactData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
+    const contactCopy = contactData || contactCopyFallback;
     const [formData, setFormData] = useState({
         name: '',
         email: '',

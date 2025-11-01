@@ -1,9 +1,12 @@
 import './Parallax.css'
 import { useEffect, useRef, useState } from 'react'
 import SplitText from './SplitText'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Parallax() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const [isVisible, setIsVisible] = useState(false);
     const spacerRef = useRef(null);
 

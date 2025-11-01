@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { blogsData, blogCategories } from '../data/blogsData'
-import blogsCopy from '../../copy/blogs.json'
+import { useContent } from '../contexts/ContentContext'
+import blogsCopyFallback from '../../copy/blogs.json'
 
 
 function Blogs() {
+    const { blogsData: blogsDataFromContext } = useContent();
+    const blogsCopy = blogsDataFromContext || blogsCopyFallback;
     const { blogId } = useParams();
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');

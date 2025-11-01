@@ -3,9 +3,12 @@ import GooeyBtn from './gooeybtn'
 import './hero.css'
 import { BsArrowUpRight, BsArrowUpLeft } from 'react-icons/bs'
 // import GradientBlinds from '../../backgrounds/GradientBlinds/GradientBlinds'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Hero() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     // Array of all images from JSON
     const images = homeCopy.images.hero.rotatingImages;
 

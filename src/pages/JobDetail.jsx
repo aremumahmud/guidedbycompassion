@@ -3,10 +3,14 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import careersCopy from '../../copy/careers.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import careersCopyFallback from '../../copy/careers.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function JobDetail() {
+    const { careersData, contactData } = useContent();
+    const careersCopy = careersData || careersCopyFallback;
+    const contactCopy = contactData || contactCopyFallback;
     const { jobId } = useParams();
 
     useEffect(() => {

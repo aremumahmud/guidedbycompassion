@@ -3,10 +3,14 @@ import GooeyBtn from './gooeybtn'
 // import ThemeToggle from './ThemeToggle'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import homeCopy from '../../copy/home.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function Header() {
+  const { homeData, contactData } = useContent();
+  const homeCopy = homeData || homeCopyFallback;
+  const contactCopy = contactData || contactCopyFallback;
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();

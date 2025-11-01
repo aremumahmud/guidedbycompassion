@@ -1,10 +1,13 @@
 import './Footer.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Footer() {
-    const [email, setEmail] = useState('');
+  const { homeData } = useContent();
+  const homeCopy = homeData || homeCopyFallback;
+  const [email, setEmail] = useState('');
 
     const handleNewsletterSubmit = (e) => {
         e.preventDefault();
@@ -40,11 +43,11 @@ function Footer() {
                         <h4 className="footer-heading">{homeCopy.footer.sections.ourServices.title}</h4>
                         <ul className="footer-links">
                             {homeCopy.footer.sections.ourServices.links.map((link, index) => (
-                                <li key={index}><a href="#services">{link}</a></li>
+                                <li key={index}><Link to="/services">{link}</Link></li>
                             ))}
                         </ul>
                         <div className="footer-cta">
-                            <a href="#contact" className="schedule-btn">{homeCopy.footer.sections.ourServices.ctaButton}</a>
+                            <Link to="/scheduling" className="schedule-btn">{homeCopy.footer.sections.ourServices.ctaButton}</Link>
                         </div>
                     </div>
 

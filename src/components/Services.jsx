@@ -1,7 +1,10 @@
 import './Services.css'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Services() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const services = homeCopy.services.serviceCards.map((service, index) => ({
         id: index + 1,
         title: service.title,

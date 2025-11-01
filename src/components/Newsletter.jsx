@@ -1,9 +1,12 @@
 import './Newsletter.css'
 import { useState } from 'react'
 import emailService from '../services/emailService'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Newsletter() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const [email, setEmail] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);

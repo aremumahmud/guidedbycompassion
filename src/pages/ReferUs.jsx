@@ -4,10 +4,14 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FAQ from '../components/FAQ'
 import emailService from '../services/emailService'
-import referUsCopy from '../../copy/referUs.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import referUsCopyFallback from '../../copy/referUs.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function ReferUs() {
+    const { referUsData, contactData } = useContent();
+    const referUsCopy = referUsData || referUsCopyFallback;
+    const contactCopy = contactData || contactCopyFallback;
     const [formData, setFormData] = useState({
         referrerName: '',
         referrerEmail: '',

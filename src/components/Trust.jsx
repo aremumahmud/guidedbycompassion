@@ -1,7 +1,10 @@
 import './Trust.css'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Trust() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const trustPoints = homeCopy.trust.trustPoints.map((point, index) => ({
         id: index + 1,
         title: point.title,

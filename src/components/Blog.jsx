@@ -1,9 +1,12 @@
 import './Blog.css'
 import { Link } from 'react-router-dom'
 import { blogsData } from '../data/blogsData'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Blog() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     // Use the same data structure as Blogs.jsx but limit to 6 articles for home page
     const articles = blogsData.slice(0, 6).map((article, index) => ({
         id: article.id,

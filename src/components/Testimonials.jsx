@@ -1,8 +1,11 @@
 import './Testimonials.css'
 import { useState, useEffect } from 'react'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function Testimonials() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);

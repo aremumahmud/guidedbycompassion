@@ -1,17 +1,30 @@
 import './Services.css'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { servicesData, servicesList } from '../data/servicesData'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ServicesParallax from '../components/ServicesParallax'
 import ServicesFAQ from '../components/ServicesFAQ'
-import servicesCopy from '../../copy/services.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import servicesCopyFallback from '../../copy/services.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function Services() {
+    const { servicesData: servicesDataFromContext, contactData } = useContent();
+    const servicesCopy = servicesDataFromContext || servicesCopyFallback;
+    const contactCopy = contactData || contactCopyFallback;
     const { serviceId } = useParams();
-    const [activeService, setActiveService] = useState(serviceId || 'companionship-care');
+    const navigate = useNavigate();
+    const [activeService, setActiveService] = useState(serviceId || servicesList[0]?.id || 'personal-care');
+
+    useEffect(() => {
+        // If no serviceId is provided, redirect to the first service
+        if (!serviceId && servicesList.length > 0) {
+            const firstServiceId = servicesList[0].id;
+            navigate(`/services/${firstServiceId}`, { replace: true });
+        }
+    }, [serviceId, navigate]);
 
     useEffect(() => {
         // Scroll to top when component mounts
@@ -21,6 +34,8 @@ function Services() {
     useEffect(() => {
         if (serviceId && servicesData[serviceId]) {
             setActiveService(serviceId);
+        } else if (!serviceId && servicesList.length > 0) {
+            setActiveService(servicesList[0].id);
         }
     }, [serviceId]);
     
@@ -66,7 +81,10 @@ function Services() {
                             <button
                                 key={service.id}
                                 className={`service-tab ${activeService === service.id ? 'active' : ''}`}
-                                onClick={() => setActiveService(service.id)}
+                                onClick={() => {
+                                    setActiveService(service.id);
+                                    navigate(`/services/${service.id}`);
+                                }}
                             >
                                 {service.shortName}
                             </button>

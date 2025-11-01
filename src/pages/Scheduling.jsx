@@ -4,10 +4,14 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { servicesList } from '../data/servicesData'
 import emailService from '../services/emailService'
-import schedulingCopy from '../../copy/scheduling.json'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import schedulingCopyFallback from '../../copy/scheduling.json'
+import contactCopyFallback from '../../copy/contact.json'
 
 function Scheduling() {
+    const { schedulingData, contactData } = useContent();
+    const schedulingCopy = schedulingData || schedulingCopyFallback;
+    const contactCopy = contactData || contactCopyFallback;
     const [formData, setFormData] = useState({
         // Personal Information
         firstName: '',

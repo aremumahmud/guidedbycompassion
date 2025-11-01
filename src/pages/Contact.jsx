@@ -4,9 +4,12 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FAQ from '../components/FAQ'
 import emailService from '../services/emailService'
-import contactCopy from '../../copy/contact.json'
+import { useContent } from '../contexts/ContentContext'
+import contactCopyFallback from '../../copy/contact.json'
 
 function Contact() {
+    const { contactData } = useContent();
+    const contactCopy = contactData || contactCopyFallback;
     const [formData, setFormData] = useState({
         name: '',
         email: '',

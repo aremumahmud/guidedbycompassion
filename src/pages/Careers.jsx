@@ -3,9 +3,12 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import careersCopy from '../../copy/careers.json'
+import { useContent } from '../contexts/ContentContext'
+import careersCopyFallback from '../../copy/careers.json'
 
 function Careers() {
+    const { careersData } = useContent();
+    const careersCopy = careersData || careersCopyFallback;
     useEffect(() => {
         // Scroll to top when component mounts
         window.scrollTo(0, 0);

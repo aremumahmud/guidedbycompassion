@@ -1,7 +1,10 @@
 import './About.css'
-import homeCopy from '../../copy/home.json'
+import { useContent } from '../contexts/ContentContext'
+import homeCopyFallback from '../../copy/home.json'
 
 function About() {
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
     return (
         <section className="about-section">
             <div className="about-container">

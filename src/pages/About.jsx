@@ -3,18 +3,19 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Parallax from '../components/Parallax'
-import aboutCopy from '../../copy/about.json'
+import { useContent } from '../contexts/ContentContext'
+import aboutCopyFallback from '../../copy/about.json'
 
 function About() {
+    const { aboutData } = useContent();
+    const aboutCopy = aboutData || aboutCopyFallback;
+
     useEffect(() => {
         // Scroll to top when component mounts
         window.scrollTo(0, 0);
     }, []);
 
     const values = aboutCopy.values.valuesList;
-
-
-
     const stats = aboutCopy.hero.stats;
 
     return (
