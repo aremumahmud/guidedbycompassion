@@ -45,11 +45,12 @@ function Application() {
             { name: '', phoneNumber: '' }
         ],
         availability: '',
-        howDidYouHear: '',
+        trainingsCertifications: '',
+        felonyConviction: '',
+        eligibleForEmployment: '',
         resumeUrl: '',
         cvUrl: '',
-        felonyConviction: '',
-        eligibleForEmployment: ''
+        howDidYouHear: ''
     })
 
     const update = (k, v) => setForm(prev => ({ ...prev, [k]: v }))
@@ -123,11 +124,12 @@ function Application() {
                     employers: [{ employer: '', supervisor: '', phoneNumber: '', address1: '', address2: '', city: '', state: '', postalCode: '', dateFrom: '', dateTo: '' }],
                     references: [{ name: '', phoneNumber: '' }, { name: '', phoneNumber: '' }, { name: '', phoneNumber: '' }],
                     availability: '',
-                    howDidYouHear: '',
+                    trainingsCertifications: '',
+                    felonyConviction: '',
+                    eligibleForEmployment: '',
                     resumeUrl: '',
                     cvUrl: '',
-                    felonyConviction: '',
-                    eligibleForEmployment: ''
+                    howDidYouHear: ''
                 })
                 setCurrentStep(0)
             } else {
@@ -362,8 +364,8 @@ function Application() {
                                         <textarea rows={3} value={form.availability} onChange={e => update('availability', e.target.value)} placeholder="e.g., Monday-Friday 9am-5pm, Weekends available" />
                                     </div>
                                     <div className="form-group full-width">
-                                        <label>How did you hear about our company?</label>
-                                        <input type="text" value={form.howDidYouHear} onChange={e => update('howDidYouHear', e.target.value)} />
+                                        <label>List any trainings or certifications that apply to this position</label>
+                                        <textarea rows={3} value={form.trainingsCertifications} onChange={e => update('trainingsCertifications', e.target.value)} placeholder="e.g., CNA certification, First Aid/CPR, Dementia Care Training, etc." />
                                     </div>
                                     <div className="form-group full-width">
                                         <label>Have you ever been convicted of a felony in the last (5) years? If yes, please explain.</label>
@@ -388,6 +390,10 @@ function Application() {
                                             onChange={(url) => update('cvUrl', url)}
                                             label="Upload CV"
                                         />
+                                    </div>
+                                    <div className="form-group full-width">
+                                        <label>How did you hear about our company?</label>
+                                        <input type="text" value={form.howDidYouHear} onChange={e => update('howDidYouHear', e.target.value)} />
                                     </div>
                                 </div>
                             </div>

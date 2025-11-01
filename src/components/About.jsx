@@ -27,14 +27,14 @@ function About() {
                     
                     <div className="about-image" data-aos="fade-left" data-aos-delay="300">
                         <img src={homeCopy.images.about.main} alt="Compassionate caregiving" />
-                        <div className="image-overlay">
+                        {/* <div className="image-overlay">
                             <div className="overlay-content">
                                 <div className="overlay-stat">
                                     <span className="overlay-number">{homeCopy.about.imageOverlay.yearsExperience}</span>
                                     <span className="overlay-label">{homeCopy.about.imageOverlay.yearsLabel}</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

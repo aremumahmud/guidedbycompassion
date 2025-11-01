@@ -35,14 +35,14 @@ function About() {
                             <p className="about-hero-description">
                                 {aboutCopy.hero.description}
                             </p>
-                            <div className="about-stats" data-aos="fade-up" data-aos-delay="200">
+                            {/* <div className="about-stats" data-aos="fade-up" data-aos-delay="200">
                                 {stats.map((stat, index) => (
                                     <div key={index} className="stat">
                                         <span className="stat-number">{stat.number}</span>
                                         <span className="stat-label">{stat.label}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

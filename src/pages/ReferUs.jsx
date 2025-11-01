@@ -163,7 +163,7 @@ function ReferUs() {
                         
                         <div className="why-refer-image" data-aos="fade-left" data-aos-delay="300">
                             <img src={referUsCopy.images.hero.main} alt="Caregiver helping senior" />
-                            <div className="image-overlay">
+                            {/* <div className="image-overlay">
                                 <div className="overlay-content">
                                     <div className="verified-icon">✓</div>
                                     <div className="overlay-text">
@@ -171,7 +171,7 @@ function ReferUs() {
                                         <span className="overlay-sub">{referUsCopy.whyRefer.imageOverlay.subText}</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

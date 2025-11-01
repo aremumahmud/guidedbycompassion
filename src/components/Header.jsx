@@ -82,7 +82,7 @@ function Header() {
               <span className="top-banner-number mobile-only">{contactCopy.contactDetails.phone}</span>
             </a>
             <a href={contactCopy.contactDetails.emailLink} className="top-banner-item" title="Email us">
-              <span className="top-banner-icon">📧</span>
+              <span className="top-banner-icon desktop-only">📧</span>
               <span className="top-banner-text desktop-only">{contactCopy.contactDetails.email}</span>
               <span className="top-banner-icon-only mobile-only">📧</span>
             </a>

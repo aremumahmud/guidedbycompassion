@@ -194,7 +194,7 @@ ${referencesText}
 
 ADDITIONAL INFORMATION:
 Availability (Days & Times): ${form.availability || 'N/A'}
-How did you hear about our company?: ${form.howDidYouHear || 'N/A'}
+Trainings or Certifications: ${form.trainingsCertifications || 'N/A'}
 Have you ever been convicted of a felony in the last (5) years?: ${form.felonyConviction || 'N/A'}
 Are you legally eligible for employment in the United States?: ${form.eligibleForEmployment || 'N/A'}
 
@@ -203,6 +203,8 @@ ATTACHED FILES:
 ${form.resumeUrl ? `Resume: ${form.resumeUrl}` : ''}
 ${form.cvUrl ? `CV: ${form.cvUrl}` : ''}
 ` : ''}
+
+How did you hear about our company?: ${form.howDidYouHear || 'N/A'}
 
 Submitted: ${new Date().toLocaleString()}
 `;
@@ -317,7 +319,7 @@ Submitted: ${new Date().toLocaleString()}
                 <tr>
                   <td style="padding:16px;line-height:1.6;color:#1a1a1a;">
                     <div><strong>Availability (Days & Times):</strong><br/>${(form.availability || 'N/A').replace(/\n/g, '<br/>')}</div>
-                    <div style="margin-top:12px;"><strong>How did you hear about our company?:</strong> ${form.howDidYouHear || 'N/A'}</div>
+                    <div style="margin-top:12px;"><strong>Trainings or Certifications:</strong><br/>${(form.trainingsCertifications || 'N/A').replace(/\n/g, '<br/>')}</div>
                     <div style="margin-top:12px;"><strong>Have you ever been convicted of a felony in the last (5) years?:</strong><br/>${(form.felonyConviction || 'N/A').replace(/\n/g, '<br/>')}</div>
                     <div style="margin-top:12px;"><strong>Are you legally eligible for employment in the United States?:</strong><br/>${(form.eligibleForEmployment || 'N/A').replace(/\n/g, '<br/>')}</div>
                   </td>
@@ -337,6 +339,17 @@ Submitted: ${new Date().toLocaleString()}
                 </tr>
               </table>
               ` : ''}
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:10px;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e9ecef;">
+                <tr>
+                  <td style="font-weight:bold;color:#ffffff;background:#1a1a1a;padding:12px 15px;font-size:14px;">📢 How Did You Hear About Us?</td>
+                </tr>
+                <tr>
+                  <td style="padding:16px;line-height:1.6;color:#1a1a1a;">
+                    <div><strong>How did you hear about our company?:</strong> ${form.howDidYouHear || 'N/A'}</div>
+                  </td>
+                </tr>
+              </table>
 
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:10px;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e9ecef;">
                 <tr>

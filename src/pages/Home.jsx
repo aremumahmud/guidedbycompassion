@@ -20,7 +20,7 @@ function Home() {
       <About />
       <Services />
       <Trust />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Parallax />
       <Refer />
       <Blog />
