@@ -106,19 +106,20 @@ function Footer() {
                                     </div>
                                 </div>
                                 <div className="hours-item">
-                                    <span className="hours-icon">📞</span>
+                                    {/* <span className="hours-icon">📞</span> */}
+                                    <span className="hours-icon">🚨</span>
                                     <div>
                                         <strong>{homeCopy.footer.sections.businessHours.weekends.days}</strong>
                                         <p>{homeCopy.footer.sections.businessHours.weekends.hours}</p>
                                     </div>
                                 </div>
-                                <div className="hours-item">
+                                {/* <div className="hours-item">
                                     <span className="hours-icon">🚨</span>
                                     <div>
                                         <strong>{homeCopy.footer.sections.businessHours.emergency.days}</strong>
                                         <p>{homeCopy.footer.sections.businessHours.emergency.hours}</p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
