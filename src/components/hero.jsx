@@ -5,6 +5,7 @@ import { BsArrowUpRight, BsArrowUpLeft } from 'react-icons/bs'
 // import GradientBlinds from '../../backgrounds/GradientBlinds/GradientBlinds'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
+import { Link } from 'react-router-dom'
 
 function Hero() {
     const { homeData } = useContent();
