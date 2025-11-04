@@ -57,8 +57,9 @@ function Hero() {
                     </div>
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+                    <Link to="/scheduling">
                         <GooeyBtn extendby={220} direction="left" text={homeCopy.hero.ctaButton} />
-
+                    </Link>
                     </div>
 
                 </div>
