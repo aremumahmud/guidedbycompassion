@@ -20,8 +20,9 @@ function Header() {
     { name: homeCopy.header.servicesDropdown.companionCare, href: '/services/companion-care' },
     { name: homeCopy.header.servicesDropdown.respiteCare, href: '/services/respite-care' },
     { name: homeCopy.header.servicesDropdown.postHospitalSupport, href: '/services/post-hospital-support' },
-    { name: homeCopy.header.servicesDropdown.specializedCare, href: '/services/specialized-care' },
-    { name: homeCopy.header.servicesDropdown.endOfLifeCare, href: '/services/end-of-life-care' }
+    { name: homeCopy.header.servicesDropdown.endOfLifeCare, href: '/services/end-of-life-care' },
+    { name: homeCopy.header.servicesDropdown.specializedCare, href: '/services/specialized-care' }
+   
   ];
 
   // Prevent body scroll when mobile menu is open
