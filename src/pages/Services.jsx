@@ -1,7 +1,7 @@
 import './Services.css'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { servicesData, servicesList } from '../data/servicesData'
+// import { servicesData, servicesList } from '../data/servicesData'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ServicesParallax from '../components/ServicesParallax'
@@ -11,7 +11,10 @@ import servicesCopyFallback from '../../copy/services.json'
 import contactCopyFallback from '../../copy/contact.json'
 
 function Services() {
-    const { servicesData: servicesDataFromContext, contactData } = useContent();
+    const { servicesData: servicesDataFromContext, contactData, servicesList: servicesListFromContext } = useContent();
+    const {servicesData, servicesList} = servicesListFromContext;
+
+    // console.log(servicesData, servicesList, "servicesData, servicesList");
     const servicesCopy = servicesDataFromContext || servicesCopyFallback;
     const contactCopy = contactData || contactCopyFallback;
     const { serviceId } = useParams();
