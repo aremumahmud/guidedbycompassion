@@ -129,7 +129,7 @@ function Header() {
         <div className="cta-buttons desktop-cta" data-aos="fade-left" data-aos-delay="300">
           {/* <ThemeToggle /> */}
           <Link to="/contact">
-            <GooeyBtn text={homeCopy.header.ctaButtons.contact} variant="white" extendby={84} />
+            <GooeyBtn text={homeCopy.header.ctaButtons.contact} variant="black" extendby={84} direction='left' />
           </Link>
           {/* <Link to="/scheduling">
             <GooeyBtn text={homeCopy.header.ctaButtons.scheduleCare} variant="black" extendby={120} direction="left" />
