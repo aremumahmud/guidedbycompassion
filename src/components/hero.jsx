@@ -15,6 +15,7 @@ function Hero() {
 
     // Array of text content for each image
     const textContent = homeCopy.hero.rotatingContent;
+    const contactButtonLabel = homeCopy?.header?.ctaButtons?.contactUs || 'Contact Us';
 
     // State to track current image index
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -58,8 +59,22 @@ function Hero() {
                     </div> */}
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
-                    <Link to="/scheduling">
+                    <Link to="/scheduling" className="desktop-primary-cta">
                         <GooeyBtn extendby={220} direction="left" text={homeCopy.hero.ctaButton} />
+                    </Link>
+                    <Link
+                        to="/scheduling"
+                        className="mobile-hero-btn schedule-btn"
+                        aria-label="Schedule care with Guided by Compassion"
+                    >
+                        {homeCopy.hero.ctaButton}
+                    </Link>
+                    <Link
+                        to="/contact"
+                        className="mobile-hero-btn contact-btn"
+                        aria-label="Contact Guided by Compassion"
+                    >
+                        {contactButtonLabel}
                     </Link>
                     </div>
 
