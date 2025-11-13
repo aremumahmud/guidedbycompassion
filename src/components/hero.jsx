@@ -63,6 +63,13 @@ function Hero() {
                         <GooeyBtn extendby={220} direction="left" text={homeCopy.hero.ctaButton} />
                     </Link>
                     <Link
+                        to="/contact"
+                        className="desktop-primary-cta desktop-contact-cta"
+                        aria-label="Contact Guided by Compassion"
+                    >
+                        <GooeyBtn text={contactButtonLabel} variant="white" extendby={84} />
+                    </Link>
+                    <Link
                         to="/scheduling"
                         className="mobile-hero-btn schedule-btn"
                         aria-label="Schedule care with Guided by Compassion"

@@ -95,6 +95,12 @@
     display: none;
   }
 
+  @media (min-width: 768px) {
+    .mobile-hero-btn {
+      display: none !important;
+    }
+  }
+
   .badge1 {
     /* background-color: #000000; */
     /* color: #ffffff; */

@@ -97,6 +97,26 @@
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.gooey-btn-arrow.secondary {
+  background-color: var(--color-secondary-500, #eecfa1);
+  color: var(--color-gray-900, #111827);
+  border: 1px solid var(--color-secondary-600, #d6b78d);
+}
+
+.gooey-btn-arrow.secondary:hover {
+  background-color: var(--color-secondary-600, #d6b78d);
+}
+
+.gooey-btn-main.secondary {
+  background-color: var(--color-secondary-500, #eecfa1);
+  color: var(--color-gray-900, #111827);
+  border: 1px solid var(--color-secondary-600, #d6b78d);
+}
+
+.gooey-btn-main.secondary:hover {
+  background-color: var(--color-secondary-600, #d6b78d);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .gooey-btn-arrow {
