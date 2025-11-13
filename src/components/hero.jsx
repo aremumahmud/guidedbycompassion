@@ -60,7 +60,7 @@ function Hero() {
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
                     <Link to="/contact" className="desktop-primary-cta">
-                        <GooeyBtn extendby={140} direction="left" text={homeCopy.hero.ctaButton} />
+                        <GooeyBtn extendby={100} direction="left" text={homeCopy.hero.ctaButton} />
                     </Link>
                     {/* <Link
                         to="/contact"
