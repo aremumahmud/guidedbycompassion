@@ -9,6 +9,7 @@ import ServicesFAQ from '../components/ServicesFAQ'
 import { useContent } from '../contexts/ContentContext'
 import servicesCopyFallback from '../../copy/services.json'
 import contactCopyFallback from '../../copy/contact.json'
+import { Link } from 'react-router-dom';
 
 function Services() {
     const { servicesData: servicesDataFromContext, contactData, servicesList: servicesListFromContext } = useContent();
@@ -138,7 +139,8 @@ function Services() {
                         <div className="service-cta1" data-aos="fade-up" data-aos-delay="600">
                             <h3 className="cta-title">{servicesCopy.serviceDetails.ctaTitle}</h3>
                             <p className="cta-description">{servicesCopy.serviceDetails.ctaDescription}</p>
-                            <button className="cta-button">{servicesCopy.serviceDetails.ctaButton}</button>
+                            <Link to="/contact" >
+                            <button className="cta-button">{servicesCopy.serviceDetails.ctaButton}</button></Link>
                         </div>
                     </div>
                 </div>

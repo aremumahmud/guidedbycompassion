@@ -59,30 +59,30 @@ function Hero() {
                     </div> */}
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
-                    <Link to="/scheduling" className="desktop-primary-cta">
+                    <Link to="/contact" className="desktop-primary-cta">
                         <GooeyBtn extendby={220} direction="left" text={homeCopy.hero.ctaButton} />
                     </Link>
-                    <Link
+                    {/* <Link
                         to="/contact"
                         className="desktop-primary-cta desktop-contact-cta"
                         aria-label="Contact Guided by Compassion"
                     >
                         <GooeyBtn text={contactButtonLabel} variant="white" extendby={84} />
-                    </Link>
-                    <Link
-                        to="/scheduling"
+                    </Link> */}
+                    {/* <Link
+                        to="/contact"
                         className="mobile-hero-btn schedule-btn"
                         aria-label="Schedule care with Guided by Compassion"
                     >
                         {homeCopy.hero.ctaButton}
-                    </Link>
-                    <Link
+                    </Link> */}
+                    {/* <Link
                         to="/contact"
                         className="mobile-hero-btn contact-btn"
                         aria-label="Contact Guided by Compassion"
                     >
                         {contactButtonLabel}
-                    </Link>
+                    </Link> */}
                     </div>
 
                 </div>

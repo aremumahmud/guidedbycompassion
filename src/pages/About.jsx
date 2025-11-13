@@ -145,10 +145,10 @@ function About() {
                             {aboutCopy.cta.description}
                         </p>
                         <div className="cta-buttons">
-                            <a href="/scheduling" className="cta-btn primary">
+                            {/* <a href="/scheduling" className="cta-btn primary">
                                 {aboutCopy.cta.buttons.primary}
-                            </a>
-                            <a href="/contact" className="cta-btn secondary">
+                            </a> */}
+                            <a href="/contact" className="cta-btn primary">
                                 {aboutCopy.cta.buttons.secondary}
                             </a>
                         </div>

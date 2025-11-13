@@ -131,9 +131,9 @@ function Header() {
           <Link to="/contact">
             <GooeyBtn text={homeCopy.header.ctaButtons.contact} variant="white" extendby={84} />
           </Link>
-          <Link to="/scheduling">
+          {/* <Link to="/scheduling">
             <GooeyBtn text={homeCopy.header.ctaButtons.scheduleCare} variant="black" extendby={120} direction="left" />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -202,9 +202,9 @@ function Header() {
             <Link to="/contact" className="mobile-cta-btn primary" onClick={closeMobileMenu}>
               {homeCopy.header.ctaButtons.contactUs}
             </Link>
-            <Link to="/scheduling" className="mobile-cta-btn secondary" onClick={closeMobileMenu}>
+            {/* <Link to="/scheduling" className="mobile-cta-btn secondary" onClick={closeMobileMenu}>
               {homeCopy.header.ctaButtons.scheduleCare}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

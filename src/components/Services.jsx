@@ -1,6 +1,7 @@
 import './Services.css'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
+import { Link } from 'react-router-dom';
 
 function Services() {
     const { homeData } = useContent();
@@ -76,9 +77,10 @@ function Services() {
                     <p className="cta-description">
                         {homeCopy.services.ctaSection.description}
                     </p>
+                    <Link to="/contact" >
                     <button className="cta-button">
                         {homeCopy.services.ctaSection.button}
-                    </button>
+                    </button></Link>
                 </div>
             </div>
         </section>
