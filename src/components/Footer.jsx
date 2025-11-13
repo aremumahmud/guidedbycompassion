@@ -46,9 +46,9 @@ function Footer() {
                                 <li key={index}><Link to="/services">{link}</Link></li>
                             ))}
                         </ul>
-                        <div className="footer-cta">
+                        {/* <div className="footer-cta">
                             <Link to="/contact" className="schedule-btn">{homeCopy.footer.sections.ourServices.ctaButton}</Link>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Quick Links */}
