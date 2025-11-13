@@ -47,7 +47,7 @@ function Hero() {
                         <p>{homeCopy.hero.mainDescription} <br />
                         </p>
                     </div>
-                    <div className="team" data-aos="fade-up" data-aos-delay="400">
+                    {/* <div className="team" data-aos="fade-up" data-aos-delay="400">
                         <div className="avatar-stack">
                             <div className="avatar-image one"></div>
                             <div className="avatar-image two"></div>
@@ -55,7 +55,7 @@ function Hero() {
 
                         </div>
                         <p>{homeCopy.hero.teamStats}</p>
-                    </div>
+                    </div> */}
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
                     <Link to="/scheduling">
