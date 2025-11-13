@@ -218,7 +218,7 @@ Submitted: ${new Date().toLocaleString()}
     let employmentHTML = '';
     if (form.employers && form.employers.length > 0) {
       employmentHTML = form.employers.map((emp, idx) => `
-                <div style="margin-bottom:20px;padding:12px;background:#f9fafb;border-radius:6px;border-left:3px solid #7E5DA7;">
+                <div style="margin-bottom:20px;padding:12px;background:#f9fafb;border-radius:6px;border-left:3px solid #ab516f;">
                   <h4 style="margin:0 0 10px 0;color:#1a1a1a;font-size:14px;font-weight:bold;">Employer ${idx + 1}</h4>
                   <div><strong>Employer:</strong> ${emp.employer || 'N/A'}</div>
                   <div><strong>Supervisor:</strong> ${emp.supervisor || 'N/A'}</div>
@@ -333,8 +333,8 @@ Submitted: ${new Date().toLocaleString()}
                 </tr>
                 <tr>
                   <td style="padding:16px;line-height:1.6;color:#1a1a1a;">
-                    ${form.resumeUrl ? `<div style="margin-bottom:12px;"><strong>Resume:</strong><br/><a href="${form.resumeUrl}" target="_blank" style="color:#7E5DA7;text-decoration:none;word-break:break-all;">${form.resumeUrl}</a></div>` : ''}
-                    ${form.cvUrl ? `<div><strong>CV:</strong><br/><a href="${form.cvUrl}" target="_blank" style="color:#7E5DA7;text-decoration:none;word-break:break-all;">${form.cvUrl}</a></div>` : ''}
+                    ${form.resumeUrl ? `<div style="margin-bottom:12px;"><strong>Resume:</strong><br/><a href="${form.resumeUrl}" target="_blank" style="color:#ab516f;text-decoration:none;word-break:break-all;">${form.resumeUrl}</a></div>` : ''}
+                    ${form.cvUrl ? `<div><strong>CV:</strong><br/><a href="${form.cvUrl}" target="_blank" style="color:#ab516f;text-decoration:none;word-break:break-all;">${form.cvUrl}</a></div>` : ''}
                   </td>
                 </tr>
               </table>

@@ -1,39 +1,39 @@
 {
   "primary": {
-    "50": "#faf5ff",
-    "100": "#f3e8ff",
-    "200": "#e9d5ff",
-    "300": "#d8b4fe",
-    "400": "#c084fc",
-    "500": "#7E5DA7",
-    "600": "#6D5A99",
-    "700": "#5E4E88",
-    "800": "#4E3F74",
-    "900": "#3E335F"
+    "50": "#fbeff3",
+    "100": "#f5d7e1",
+    "200": "#eaaec2",
+    "300": "#df85a3",
+    "400": "#d36588",
+    "500": "#ab516f",
+    "600": "#91435d",
+    "700": "#753748",
+    "800": "#582a35",
+    "900": "#3c1d23"
   },
   "secondary": {
-    "50": "#f0fdfa",
-    "100": "#ccfbf1",
-    "200": "#99f6e4",
-    "300": "#5eead4",
-    "400": "#2dd4bf",
-    "500": "#00A89E",
-    "600": "#009287",
-    "700": "#007E77",
-    "800": "#006860",
-    "900": "#00524C"
+    "50": "#fff9f1",
+    "100": "#fef0d8",
+    "200": "#fde4bf",
+    "300": "#f9d6a6",
+    "400": "#f4dcba",
+    "500": "#eecfa1",
+    "600": "#d6b78d",
+    "700": "#bd9f78",
+    "800": "#a48762",
+    "900": "#8b6f4c"
   },
   "accent": {
-    "blue": "#00A89E",
-    "indigo": "#7E5DA7",
-    "purple": "#7E5DA7",
+    "blue": "#ab516f",
+    "indigo": "#ab516f",
+    "purple": "#ab516f",
     "pink": "#e83e8c",
     "red": "#dc3545",
     "orange": "#C49A6C",
     "yellow": "#EDCFA2",
     "green": "#10b981",
-    "teal": "#00A89E",
-    "cyan": "#00A89E"
+    "teal": "#eecfa1",
+    "cyan": "#eecfa1"
   },
   "neutral": {
     "white": "#ffffff",
@@ -56,7 +56,7 @@
     "secondary": "#f8f9fa",
     "dark": "#1a1a1a",
     "gradient": {
-      "hero": "linear-gradient(135deg, #7E5DA7 0%, #00A89E 100%)",
+      "hero": "linear-gradient(135deg, #ab516f 0%, #eecfa1 100%)",
       "card": "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
       "overlay": "rgba(0, 0, 0, 0.1)"
     }
@@ -72,19 +72,19 @@
     "light": "#e9ecef",
     "medium": "#dee2e6",
     "dark": "#ced4da",
-    "primary": "#7E5DA7"
+    "primary": "#ab516f"
   },
   "status": {
     "success": "#10b981",
     "warning": "#ffc107",
     "error": "#dc3545",
-    "info": "#14B8A6"
+    "info": "#d6b78d"
   },
   "interactive": {
     "primary": {
-      "default": "#7E5DA7",
-      "hover": "#6D5A99",
-      "active": "#5E4E88",
+      "default": "#ab516f",
+      "hover": "#91435d",
+      "active": "#753748",
       "disabled": "#6c757d"
     },
     "secondary": {
@@ -94,9 +94,9 @@
       "disabled": "#ced4da"
     },
     "accent": {
-      "default": "#00A89E",
-      "hover": "#009287",
-      "active": "#007E77",
+      "default": "#d6b78d",
+      "hover": "#bd9f78",
+      "active": "#a48762",
       "disabled": "#6c757d"
     }
   },
@@ -129,7 +129,7 @@
         "primary": "#6D6F71",
         "secondary": "#666666"
       },
-      "accent": "#7E5DA7"
+      "accent": "#ab516f"
     },
     "dark": {
       "name": "Dark Theme",
@@ -141,7 +141,7 @@
         "primary": "#ffffff",
         "secondary": "#e9ecef"
       },
-      "accent": "#00A89E"
+      "accent": "#ab516f"
     },
     "blue": {
       "name": "Blue Theme",
@@ -153,7 +153,7 @@
         "primary": "#6D6F71",
         "secondary": "#666666"
       },
-      "accent": "#00A89E"
+      "accent": "#ab516f"
     },
     "green": {
       "name": "Green Theme",
@@ -177,7 +177,7 @@
         "primary": "#6D6F71",
         "secondary": "#666666"
       },
-      "accent": "#7E5DA7"
+      "accent": "#ab516f"
     },
     "teal": {
       "name": "Teal Theme",
@@ -189,7 +189,7 @@
         "primary": "#6D6F71",
         "secondary": "#666666"
       },
-      "accent": "#00A89E"
+      "accent": "#eecfa1"
     }
   }
 }

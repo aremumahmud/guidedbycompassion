@@ -41,7 +41,7 @@ function Hero() {
             <div className="hero-content">
                 <div className="left-content" data-aos="fade-right" data-aos-delay="100">
 
-                    <div className="badge1" data-aos="zoom-in" data-aos-delay="200">{homeCopy.hero.badge}</div>
+                    {/* <div className="badge1" data-aos="zoom-in" data-aos-delay="200">{homeCopy.hero.badge}</div> */}
                     <div className="hero-heading" data-aos="fade-up" data-aos-delay="300">
                         <h1>{homeCopy.hero.mainHeading}</h1>
                         <p>{homeCopy.hero.mainDescription} <br />

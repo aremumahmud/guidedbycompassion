@@ -1,8 +1,8 @@
 /* CSS Variables for Dynamic Theming */
 /*
  * Guided by Compassion Color Palette:
- * - #7E5DA7 (Purple) - Primary brand color
- * - #00A89E (Teal) - Secondary brand color
+ * - #ab516f (Mulberry Rose) - Primary brand color
+ * - #eecfa1 (Golden Sand) - Secondary brand color
  * - #EDCFA2 (Light Sand) - Accent
  * - #C49A6C (Tan) - Accent
  * - #AA7C50 (Brown) - Accent
@@ -11,41 +11,41 @@
  * - Light grey for balance and neutrality
  */
 :root {
-  /* Primary Colors - Purple Palette */
-  --color-primary-50: #faf5ff;
-  --color-primary-100: #f3e8ff;
-  --color-primary-200: #e9d5ff;
-  --color-primary-300: #d8b4fe;
-  --color-primary-400: #c084fc;
-  --color-primary-500: #7E5DA7;
-  --color-primary-600: #6D5A99;
-  --color-primary-700: #5E4E88;
-  --color-primary-800: #4E3F74;
-  --color-primary-900: #3E335F;
+  /* Primary Colors - Mulberry Rose Palette */
+  --color-primary-50: #fbeff3;
+  --color-primary-100: #f5d7e1;
+  --color-primary-200: #eaaec2;
+  --color-primary-300: #df85a3;
+  --color-primary-400: #d36588;
+  --color-primary-500: #ab516f;
+  --color-primary-600: #91435d;
+  --color-primary-700: #753748;
+  --color-primary-800: #582a35;
+  --color-primary-900: #3c1d23;
 
-  /* Secondary Colors - Teal Palette */
-  --color-secondary-50: #f0fdfa;
-  --color-secondary-100: #ccfbf1;
-  --color-secondary-200: #99f6e4;
-  --color-secondary-300: #5eead4;
-  --color-secondary-400: #2dd4bf;
-  --color-secondary-500: #00A89E;
-  --color-secondary-600: #009287;
-  --color-secondary-700: #007E77;
-  --color-secondary-800: #006860;
-  --color-secondary-900: #00524C;
+  /* Secondary Colors - Golden Sand Palette */
+  --color-secondary-50: #fff9f1;
+  --color-secondary-100: #fef0d8;
+  --color-secondary-200: #fde4bf;
+  --color-secondary-300: #f9d6a6;
+  --color-secondary-400: #f4dcba;
+  --color-secondary-500: #eecfa1;
+  --color-secondary-600: #d6b78d;
+  --color-secondary-700: #bd9f78;
+  --color-secondary-800: #a48762;
+  --color-secondary-900: #8b6f4c;
 
   /* Accent Colors */
-  --color-accent-blue: #00A89E;
-  --color-accent-indigo: #7E5DA7;
-  --color-accent-purple: #7E5DA7;
+  --color-accent-blue: #ab516f;
+  --color-accent-indigo: #ab516f;
+  --color-accent-purple: #ab516f;
   --color-accent-pink: #e83e8c;
   --color-accent-red: #dc3545;
   --color-accent-orange: #C49A6C;
   --color-accent-yellow: #EDCFA2;
   --color-accent-green: #10b981;
-  --color-accent-teal: #00A89E;
-  --color-accent-cyan: #00A89E;
+  --color-accent-teal: #eecfa1;
+  --color-accent-cyan: #eecfa1;
 
   /* Neutral Colors */
   --color-white: #FFFFFF;
@@ -65,10 +65,10 @@
   --bg-primary: #FFFFFF;
   --bg-secondary: #f9fafb;
   --bg-dark: #374151;
-  --bg-gradient-hero: linear-gradient(135deg, #7E5DA7 0%, #00A89E 100%);
+  --bg-gradient-hero: linear-gradient(135deg, #ab516f 0%, #eecfa1 100%);
   --bg-gradient-card: linear-gradient(135deg, #FFFFFF 0%, #f9fafb 100%);
-  --bg-overlay-parallax: rgb(126, 93, 167);
-  --bg-overlay: rgba(126, 93, 167, 0.1);
+  --bg-overlay-parallax: rgb(171, 81, 111);
+  --bg-overlay: rgba(171, 81, 111, 0.1);
 
   /* Text Colors */
   --text-primary: #6D6F71;
@@ -81,13 +81,13 @@
   --border-light: #e5e7eb;
   --border-medium: #d1d5db;
   --border-dark: #9ca3af;
-  --border-primary: #7E5DA7;
+  --border-primary: #ab516f;
 
   /* Status Colors */
   --status-success: #10b981;
   --status-warning: #fbbf24;
   --status-error: #dc3545;
-  --status-info: #14B8A6;
+  --status-info: #d6b78d;
 
   /* Additional Color Variables for Consistency */
   --success-color: #10b981;
@@ -99,13 +99,13 @@
   --warning-color-dark: #d97706;
   --error-color: #dc3545;
   --error-color-dark: #b02a37;
-  --accent-primary: #6B46C1;
-  --accent-secondary: #14B8A6;
+  --accent-primary: #ab516f;
+  --accent-secondary: #eecfa1;
 
   /* Interactive Colors */
-  --interactive-primary-default: #7E5DA7;
-  --interactive-primary-hover: #6D5A99;
-  --interactive-primary-active: #5E4E88;
+  --interactive-primary-default: #ab516f;
+  --interactive-primary-hover: #91435d;
+  --interactive-primary-active: #753748;
   --interactive-primary-disabled: #6b7280;
 
   --interactive-secondary-default: #FFFFFF;
@@ -113,9 +113,9 @@
   --interactive-secondary-active: #e5e7eb;
   --interactive-secondary-disabled: #d1d5db;
 
-  --interactive-accent-default: #00A89E;
-  --interactive-accent-hover: #009287;
-  --interactive-accent-active: #007E77;
+  --interactive-accent-default: #d6b78d;
+  --interactive-accent-hover: #bd9f78;
+  --interactive-accent-active: #a48762;
   --interactive-accent-disabled: #6b7280;
 
   /* Shadow Colors */
@@ -125,7 +125,7 @@
   --shadow-xl: 0 20px 25px rgba(55, 65, 81, 0.1);
   --shadow-card: 0 10px 30px rgba(55, 65, 81, 0.1);
   --shadow-button: 0 2px 4px rgba(55, 65, 81, 0.1);
-  --shadow-focus: 0 0 0 4px rgba(107, 70, 193, 0.1);
+  --shadow-focus: 0 0 0 4px rgba(171, 81, 111, 0.1);
 
   /* Opacity Values */
   --opacity-10: 0.1;

@@ -164,7 +164,7 @@ function Scheduling() {
                 <div className="scheduling-hero-container">
                     <div className="scheduling-hero-content">
                         <div className="scheduling-hero-text" data-aos="fade-up">
-                            <div className="scheduling-badge">{schedulingCopy.hero.badge}</div>
+                            {/* <div className="scheduling-badge">{schedulingCopy.hero.badge}</div> */}
                             <h1 className="scheduling-hero-title">
                                 {schedulingCopy.hero.title}<br />
                                 <span className="highlight1">{schedulingCopy.hero.titleHighlight}</span>
@@ -172,14 +172,14 @@ function Scheduling() {
                             <p className="scheduling-hero-description">
                                 {schedulingCopy.hero.description}
                             </p>
-                            <div className="scheduling-stats" data-aos="fade-up" data-aos-delay="200">
+                            {/* <div className="scheduling-stats" data-aos="fade-up" data-aos-delay="200">
                                 {schedulingCopy.hero.stats.map((stat, index) => (
                                     <div key={index} className="stat">
                                         <span className="stat-number">{stat.number}</span>
                                         <span className="stat-label">{stat.label}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                         <div className="scheduling-hero-image" data-aos="fade-left" data-aos-delay="300">
                             <img src={schedulingCopy.images.hero.main} alt="Compassionate Care" />
