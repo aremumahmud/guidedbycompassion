@@ -5,7 +5,7 @@ const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const Admin_Email = process.env.ADMIN_EMAIL;
 const Admin_Name = process.env.ADMIN_NAME;
-const Admin_Phone = process.env.ADMIN_PHONE || '346 538 0750'; // Default fallback
+const Admin_Phone = process.env.ADMIN_PHONE || '713-325-0885'; // Default fallback
 // Format phone for tel: links (remove spaces, parentheses, but keep +)
 const Admin_Phone_Tel = Admin_Phone.replace(/[\s()-]/g, '');
 
@@ -253,9 +253,9 @@ export default async function handler(req, res) {
     // Validate API key is configured
     if (!BREVO_API_KEY) {
         console.error('BREVO_API_KEY environment variable is not set');
-        return res.status(500).json({ 
-            success: false, 
-            error: 'Email service not configured. Please check server environment variables.' 
+        return res.status(500).json({
+            success: false,
+            error: 'Email service not configured. Please check server environment variables.'
         });
     }
 
@@ -263,9 +263,9 @@ export default async function handler(req, res) {
         const { emailType, formData } = req.body;
 
         if (!emailType || !formData) {
-            return res.status(400).json({ 
-                success: false, 
-                error: 'Missing required fields: emailType and formData' 
+            return res.status(400).json({
+                success: false,
+                error: 'Missing required fields: emailType and formData'
             });
         }
 
@@ -411,10 +411,32 @@ export default async function handler(req, res) {
                 };
                 break;
 
+            case 'application':
+                emailPayload = {
+                    sender: {
+                        name: Admin_Name,
+                        email: Admin_Email
+                    },
+                    to: [
+                        {
+                            email: Admin_Email,
+                            name: Admin_Name
+                        }
+                    ],
+                    replyTo: {
+                        email: formData.email,
+                        name: `${formData.firstName} ${formData.lastName}`
+                    },
+                    subject: `New Employment Application - ${formData.jobPosition || 'General Application'}`,
+                    htmlContent: generateApplicationFormHTML(formData),
+                    textContent: generateApplicationFormText(formData)
+                };
+                break;
+
             default:
-                return res.status(400).json({ 
-                    success: false, 
-                    error: `Unsupported email type: ${emailType}` 
+                return res.status(400).json({
+                    success: false,
+                    error: `Unsupported email type: ${emailType}`
                 });
         }
 
@@ -432,25 +454,25 @@ export default async function handler(req, res) {
         if (!response.ok) {
             const errorData = await response.json();
             console.error('Brevo API Error:', errorData);
-            return res.status(response.status).json({ 
-                success: false, 
-                error: `Failed to send email: ${response.status} - ${errorData.message || 'Unknown error'}` 
+            return res.status(response.status).json({
+                success: false,
+                error: `Failed to send email: ${response.status} - ${errorData.message || 'Unknown error'}`
             });
         }
 
         const result = await response.json();
         console.log('Email sent successfully:', result);
-        
-        return res.status(200).json({ 
-            success: true, 
-            data: result 
+
+        return res.status(200).json({
+            success: true,
+            data: result
         });
 
     } catch (error) {
         console.error('Email sending error:', error);
-        return res.status(500).json({ 
-            success: false, 
-            error: error.message 
+        return res.status(500).json({
+            success: false,
+            error: error.message
         });
     }
 }
@@ -767,3 +789,320 @@ ${Admin_Email}
 `;
 }
 
+// Application form templates
+function generateApplicationFormHTML(formData) {
+    const jobPosition = formData.jobPosition || 'General Application';
+    const fullName = `${formData.firstName || ''} ${formData.middleName || ''} ${formData.lastName || ''}`.trim();
+    const preferredName = formData.preferredName ? ` (Preferred: ${formData.preferredName})` : '';
+
+    return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Employment Application - ${Admin_Name}</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: Arial, sans-serif;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 20px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="max-width: 700px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="background-color: #8e211b; color: #ffffff; padding: 30px 20px; text-align: center;">
+                            <h1 style="margin: 0 0 10px 0; font-size: 28px; color: #ffffff; font-family: Arial, sans-serif;">📋 New Employment Application</h1>
+                            <p style="margin: 0; opacity: 0.9; font-size: 16px; color: #ffffff; font-family: Arial, sans-serif;">${Admin_Name} - ${jobPosition}</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td style="background-color: #f8f9fa; padding: 30px;">
+                            
+                            <!-- Personal Information Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 25px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 16px; font-family: Arial, sans-serif;">👤 Personal Information</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Full Name:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${fullName}${preferredName}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Email:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;"><a href="mailto:${formData.email}" style="color: #8e211b; text-decoration: none; font-weight: 500;">${formData.email || 'Not provided'}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Mobile Phone:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;"><a href="tel:${formData.mobilePhone}" style="color: #8e211b; text-decoration: none; font-weight: 500;">${formData.mobilePhone || 'Not provided'}</a></td>
+                                            </tr>
+                                            ${formData.homePhone ? `<tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Home Phone:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;"><a href="tel:${formData.homePhone}" style="color: #8e211b; text-decoration: none; font-weight: 500;">${formData.homePhone}</a></td>
+                                            </tr>` : ''}
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Address:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.address || 'Not provided'}${formData.addressLine2 ? ', ' + formData.addressLine2 : ''}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">City, State ZIP:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.city || ''}, ${formData.state || ''} ${formData.postalCode || ''}</td>
+                                            </tr>
+                                            ${formData.dateOfBirth ? `<tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Date of Birth:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.dateOfBirth}</td>
+                                            </tr>` : ''}
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Location:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.location || 'Not specified'}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Hours Desired Weekly:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.hoursWantedWeekly || 'Not specified'}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Education Section -->
+                            ${(formData.educationHighSchool || formData.educationCollege || formData.school) ? `
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 25px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 16px; font-family: Arial, sans-serif;">🎓 Education</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            ${formData.educationHighSchool || formData.educationCollege ? `<tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Education Level:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.educationHighSchool ? 'High School' : ''}${formData.educationHighSchool && formData.educationCollege ? ', ' : ''}${formData.educationCollege ? 'College' : ''}</td>
+                                            </tr>` : ''}
+                                            ${formData.school ? `<tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">School:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.school}</td>
+                                            </tr>` : ''}
+                                            ${formData.degreeReceived ? `<tr>
+                                                <td style="width: 30%; font-weight: bold; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">Degree:</td>
+                                                <td style="width: 70%; color: #1a1a1a; padding: 8px 0; font-size: 14px; font-family: Arial, sans-serif;">${formData.degreeReceived}</td>
+                                            </tr>` : ''}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            ` : ''}
+                            
+                            <!-- Employment History Section -->
+                            ${formData.employers && formData.employers.length > 0 && formData.employers[0].employer ? `
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 25px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 16px; font-family: Arial, sans-serif;">💼 Employment History</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        ${formData.employers.map((emp, idx) => emp.employer ? `
+                                        <div style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+                                            <h4 style="margin: 0 0 10px 0; color: #8e211b; font-size: 16px;">Employer ${idx + 1}</h4>
+                                            <p style="margin: 5px 0; font-size: 14px;"><strong>Employer:</strong> ${emp.employer}</p>
+                                            ${emp.supervisor ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Supervisor:</strong> ${emp.supervisor}</p>` : ''}
+                                            ${emp.phoneNumber ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Phone:</strong> ${emp.phoneNumber}</p>` : ''}
+                                            ${emp.dateFrom || emp.dateTo ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Dates:</strong> ${emp.dateFrom || ''} to ${emp.dateTo || 'Present'}</p>` : ''}
+                                            ${emp.address1 ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Address:</strong> ${emp.address1}${emp.address2 ? ', ' + emp.address2 : ''}, ${emp.city || ''}, ${emp.state || ''} ${emp.postalCode || ''}</p>` : ''}
+                                        </div>
+                                        ` : '').join('')}
+                                    </td>
+                                </tr>
+                            </table>
+                            ` : ''}
+                            
+                            <!-- References Section -->
+                            ${formData.references && formData.references.length > 0 && formData.references[0].name ? `
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 25px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 16px; font-family: Arial, sans-serif;">📞 Professional References</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        ${formData.references.map((ref, idx) => ref.name ? `
+                                        <div style="margin-bottom: 15px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+                                            <h4 style="margin: 0 0 10px 0; color: #8e211b; font-size: 16px;">Reference ${idx + 1}</h4>
+                                            <p style="margin: 5px 0; font-size: 14px;"><strong>Name:</strong> ${ref.name}</p>
+                                            ${ref.phoneNumber ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Phone:</strong> ${ref.phoneNumber}</p>` : ''}
+                                        </div>
+                                        ` : '').join('')}
+                                    </td>
+                                </tr>
+                            </table>
+                            ` : ''}
+                            
+                            <!-- Additional Information Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 25px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 16px; font-family: Arial, sans-serif;">📝 Additional Information</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        ${formData.availability ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">Availability:</strong>
+                                            <p style="margin: 5px 0; color: #1a1a1a; font-size: 14px;">${formData.availability.replace(/\n/g, '<br>')}</p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.trainingsCertifications ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">Trainings/Certifications:</strong>
+                                            <p style="margin: 5px 0; color: #1a1a1a; font-size: 14px;">${formData.trainingsCertifications.replace(/\n/g, '<br>')}</p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.felonyConviction ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">Felony Conviction (Last 5 Years):</strong>
+                                            <p style="margin: 5px 0; color: #1a1a1a; font-size: 14px;">${formData.felonyConviction.replace(/\n/g, '<br>')}</p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.eligibleForEmployment ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">Eligible for Employment:</strong>
+                                            <p style="margin: 5px 0; color: #1a1a1a; font-size: 14px;">${formData.eligibleForEmployment.replace(/\n/g, '<br>')}</p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.howDidYouHear ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">How did you hear about us:</strong>
+                                            <p style="margin: 5px 0; color: #1a1a1a; font-size: 14px;">${formData.howDidYouHear}</p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.resumeUrl ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">Resume:</strong>
+                                            <p style="margin: 5px 0;"><a href="${formData.resumeUrl}" style="color: #8e211b; text-decoration: none; font-weight: 500;">View Resume</a></p>
+                                        </div>
+                                        ` : ''}
+                                        ${formData.cvUrl ? `
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #1a1a1a; font-size: 14px;">CV:</strong>
+                                            <p style="margin: 5px 0;"><a href="${formData.cvUrl}" style="color: #8e211b; text-decoration: none; font-weight: 500;">View CV</a></p>
+                                        </div>
+                                        ` : ''}
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Submission Date -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e9ecef;">
+                                <tr>
+                                    <td style="font-weight: bold; color: #ffffff; background-color: #8e211b; padding: 12px 15px; margin: 0; font-size: 14px; font-family: Arial, sans-serif;">📅 Submission Date</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px; margin: 0; background-color: #ffffff; font-size: 16px; line-height: 1.5; font-family: Arial, sans-serif;">${new Date().toLocaleString()}</td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="text-align: center; padding: 25px 20px; background-color: #8e211b; color: #ffffff;">
+                            <p style="margin: 5px 0; font-family: Arial, sans-serif;">${Admin_Name} | <a href="tel:${Admin_Phone_Tel}" style="color: #ffffff; text-decoration: none; font-weight: bold;">${Admin_Phone}</a> | ${Admin_Email}</p>
+                            <p style="margin: 5px 0; opacity: 0.8; font-size: 14px; font-family: Arial, sans-serif;"><em>Please review this application and respond within 48 hours</em></p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>`;
+}
+
+function generateApplicationFormText(formData) {
+    const jobPosition = formData.jobPosition || 'General Application';
+    const fullName = `${formData.firstName || ''} ${formData.middleName || ''} ${formData.lastName || ''}`.trim();
+
+    let text = `
+NEW EMPLOYMENT APPLICATION - ${Admin_Name}
+Position: ${jobPosition}
+Submitted: ${new Date().toLocaleString()}
+
+PERSONAL INFORMATION:
+Full Name: ${fullName} ${formData.preferredName ? `(Preferred: ${formData.preferredName})` : ''}
+Email: ${formData.email || 'Not provided'}
+Mobile Phone: ${formData.mobilePhone || 'Not provided'}
+Home Phone: ${formData.homePhone || 'Not provided'}
+Address: ${formData.address || 'Not provided'} ${formData.addressLine2 || ''}
+City, State ZIP: ${formData.city || ''}, ${formData.state || ''} ${formData.postalCode || ''}
+Date of Birth: ${formData.dateOfBirth || 'Not provided'}
+Location: ${formData.location || 'Not specified'}
+Hours Desired Weekly: ${formData.hoursWantedWeekly || 'Not specified'}
+
+EDUCATION:
+${formData.educationHighSchool ? '- High School\n' : ''}${formData.educationCollege ? '- College\n' : ''}School: ${formData.school || 'Not provided'}
+Degree: ${formData.degreeReceived || 'Not provided'}
+
+EMPLOYMENT HISTORY:
+`;
+
+    if (formData.employers && formData.employers.length > 0) {
+        formData.employers.forEach((emp, idx) => {
+            if (emp.employer) {
+                text += `
+Employer ${idx + 1}:
+Employer: ${emp.employer}
+Supervisor: ${emp.supervisor || 'N/A'}
+Phone: ${emp.phoneNumber || 'N/A'}
+Dates: ${emp.dateFrom || ''} to ${emp.dateTo || 'Present'}
+Address: ${emp.address1 || ''} ${emp.address2 || ''}, ${emp.city || ''}, ${emp.state || ''} ${emp.postalCode || ''}
+`;
+            }
+        });
+    }
+
+    text += `
+PROFESSIONAL REFERENCES:
+`;
+    if (formData.references && formData.references.length > 0) {
+        formData.references.forEach((ref, idx) => {
+            if (ref.name) {
+                text += `
+Reference ${idx + 1}:
+Name: ${ref.name}
+Phone: ${ref.phoneNumber || 'N/A'}
+`;
+            }
+        });
+    }
+
+    text += `
+ADDITIONAL INFORMATION:
+Availability: ${formData.availability || 'Not provided'}
+Trainings/Certifications: ${formData.trainingsCertifications || 'Not provided'}
+Felony Conviction (Last 5 Years): ${formData.felonyConviction || 'Not provided'}
+Eligible for Employment: ${formData.eligibleForEmployment || 'Not provided'}
+How did you hear about us: ${formData.howDidYouHear || 'Not specified'}
+Resume: ${formData.resumeUrl || 'Not provided'}
+CV: ${formData.cvUrl || 'Not provided'}
+
+---
+${Admin_Name}
+${Admin_Phone}
+${Admin_Email}
+`;
+
+    return text;
+}

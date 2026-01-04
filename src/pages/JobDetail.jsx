@@ -22,7 +22,7 @@ function JobDetail() {
         // Get the job type from the current job
         const job = jobListings[jobId];
         const jobType = job ? job.type : 'Personal Care Assistant';
-        
+
         const subject = encodeURIComponent(`Application for ${position} - ${jobType} Position`);
         const body = encodeURIComponent(`Dear Hiring Manager,
 
@@ -72,7 +72,7 @@ Best regards,
 [Your Full Name]
 [Your Phone Number]
 [Your Email Address]`);
-        
+
         window.location.href = `mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'info@example.com'}?subject=${subject}&body=${body}`;
     };
 
@@ -134,14 +134,14 @@ Best regards,
     return (
         <div className="job-detail-page">
             <Header />
-            
+
             {/* Job Detail Hero */}
             <section className="job-detail-hero">
                 <div className="job-detail-hero-container">
                     <div className="job-detail-breadcrumb">
                         <Link to="/careers" className="breadcrumb-link">← Back to Careers</Link>
                     </div>
-                    
+
                     <div className="job-detail-hero-content">
                         <div className="job-detail-image" data-aos="fade-right">
                             <img src={job.image} alt={job.title} />
@@ -149,7 +149,7 @@ Best regards,
                                 <span className="job-status">{job.posted}</span>
                             </div>
                         </div>
-                        
+
                         <div className="job-detail-info" data-aos="fade-left" data-aos-delay="200">
                             <div className="job-detail-meta">
                                 <span className="job-type">{job.type}</span>
@@ -161,15 +161,20 @@ Best regards,
                                 <span>{job.location}</span>
                             </div>
                             <p className="job-detail-description">{job.description}</p>
-                            
+
                             <div className="job-detail-actions">
-                                <button 
+                                <button
                                     className="apply-btn-large"
                                     onClick={() => handleApplyClick(job.title)}
                                 >
                                     Apply via Email
                                 </button>
-                                <Link to="/careers/apply" className="apply-btn-large" style={{ marginLeft: 12 }}>
+                                <Link
+                                    to="/careers/apply"
+                                    state={{ jobPosition: job.title }}
+                                    className="apply-btn-large"
+                                    style={{ marginLeft: 12 }}
+                                >
                                     Application Form
                                 </Link>
                             </div>
@@ -227,15 +232,16 @@ Best regards,
                     <div className="job-apply-content" data-aos="fade-up">
                         <h2 className="apply-section-title">Ready to Join Our Team?</h2>
                         <p className="apply-section-description">
-                            Take the next step in your caregiving career. Apply for the {job.title} position today 
+                            Take the next step in your caregiving career. Apply for the {job.title} position today
                             and become part of our compassionate Personal Assistance Services team.
                         </p>
-                        <button 
+                        <Link
+                            to="/careers/apply"
+                            state={{ jobPosition: job.title }}
                             className="apply-btn-large"
-                            onClick={() => handleApplyClick(job.title)}
                         >
                             Apply for {job.title}
-                        </button>
+                        </Link>
                         <p className="apply-note">
                             Questions about this position? Contact us at{' '}
                             <a href={`mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'info@example.com'}`} className="email-link">

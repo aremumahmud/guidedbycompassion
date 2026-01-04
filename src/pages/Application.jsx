@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import emailService from '../services/emailService'
 import CloudinaryDocumentUpload from '../components/CloudinaryDocumentUpload'
+import { useLocation } from 'react-router-dom'
 
 function Application() {
     useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -15,7 +16,11 @@ function Application() {
     ]
     const [currentStep, setCurrentStep] = useState(0)
 
+    const location = useLocation()
+    const initialJobPosition = location.state?.jobPosition || ''
+
     const [form, setForm] = useState({
+        jobPosition: initialJobPosition,
         firstName: '',
         middleName: '',
         noMiddleName: false,
@@ -72,12 +77,12 @@ function Application() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         // Only allow submission on the last step
         if (currentStep !== steps.length - 1) {
             return
         }
-        
+
         const required = [
             form.firstName,
             form.lastName,
@@ -95,12 +100,13 @@ function Application() {
         }
         try {
             setSubmitting(true)
-            
+
             console.log('Sending email with file links...')
             const result = await emailService.sendApplicationEmail(form)
             if (result && result.success !== false) {
                 alert('Application submitted successfully. Thank you!')
                 setForm({
+                    jobPosition: initialJobPosition,
                     firstName: '',
                     middleName: '',
                     noMiddleName: false,
@@ -151,7 +157,9 @@ function Application() {
             <section className="application-hero">
                 <div className="application-hero-container">
                     <h1 className="application-title">Employment Application</h1>
-                    <p className="application-subtitle">Complete all sections to submit your application</p>
+                    <p className="application-subtitle">
+                        {form.jobPosition ? `Applying for: ${form.jobPosition}` : 'Complete all sections to submit your application'}
+                    </p>
                 </div>
             </section>
 
@@ -400,14 +408,14 @@ function Application() {
                         )}
 
                         <div className="wizard-actions">
-                            <button 
-                                type="button" 
-                                className="secondary-btn" 
-                                disabled={currentStep===0 || submitting} 
+                            <button
+                                type="button"
+                                className="secondary-btn"
+                                disabled={currentStep === 0 || submitting}
                                 onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
-                                    setCurrentStep(s => Math.max(0, s-1))
+                                    setCurrentStep(s => Math.max(0, s - 1))
                                 }}
                             >
                                 ← Back
@@ -416,14 +424,14 @@ function Application() {
                                 Step {currentStep + 1} of {steps.length}
                             </div>
                             {currentStep < steps.length - 1 ? (
-                                <button 
-                                    type="button" 
-                                    className="primary-btn" 
-                                    disabled={submitting} 
+                                <button
+                                    type="button"
+                                    className="primary-btn"
+                                    disabled={submitting}
                                     onClick={(e) => {
                                         e.preventDefault()
                                         e.stopPropagation()
-                                        setCurrentStep(s => Math.min(steps.length-1, s+1))
+                                        setCurrentStep(s => Math.min(steps.length - 1, s + 1))
                                     }}
                                 >
                                     Next →

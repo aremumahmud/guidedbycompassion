@@ -63,7 +63,7 @@ Best regards,
 [Your Full Name]
 [Your Phone Number]
 [Your Email Address]`);
-        
+
         window.location.href = `mailto:${import.meta.env.VITE_ADMIN_EMAIL || 'info@example.com'}?subject=${subject}&body=${body}`;
     };
 
@@ -77,7 +77,7 @@ Best regards,
     return (
         <div className="careers-page">
             <Header />
-            
+
             {/* Hero Section */}
             <section className="careers-hero">
                 <div className="careers-hero-container">
@@ -123,7 +123,7 @@ Best regards,
                                         <span className="job-status">{job.posted}</span>
                                     </div>
                                 </div>
-                                
+
                                 <div className="job-card-content">
                                     <div className="job-card-header">
                                         <h3 className="job-card-title">{job.title}</h3>
@@ -140,19 +140,20 @@ Best regards,
                                     <p className="job-card-description">{job.description}</p>
 
                                     <div className="job-card-actions">
-                                        <Link 
+                                        <Link
                                             to={`/careers/${job.slug}`}
                                             className="view-details-btn"
                                         >
                                             {careersCopy.jobListings.buttons.viewDetails}
                                             <span className="">→</span>
                                         </Link>
-                                        {/* <button 
+                                        <Link
+                                            to="/careers/apply"
+                                            state={{ jobPosition: job.title }}
                                             className="apply-btn"
-                                            onClick={() => handleApplyClick(job.title)}
                                         >
                                             {careersCopy.jobListings.buttons.applyNow}
-                                        </button> */}
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
