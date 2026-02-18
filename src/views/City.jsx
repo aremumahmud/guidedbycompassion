@@ -87,6 +87,73 @@ const allCities = [
     { slug: 'santa-fe',      name: 'Santa Fe' },
 ];
 
+// ─── Unique Per-City Content (prevents duplicate content penalty) ─────────────
+// Each city gets its own intro and about paragraph — different angle, different
+// local landmarks, different tone — so Google sees 15 genuinely distinct pages.
+
+const cityContent = {
+    'sugar-land': {
+        hero: `Sugar Land families trust Guided by Compassion for professional, licensed home care delivered with warmth and dignity. From the established neighborhoods of First Colony and Sugar Creek to newer communities in Riverstone, our background-checked caregivers provide personalized in-home support — so your loved one can age comfortably in the home they love, surrounded by everything familiar.`,
+        about: `Sugar Land is one of Fort Bend County's most sought-after communities — known for its master-planned neighborhoods, excellent amenities, and a strong sense of belonging. Families here set a high bar for every service, and home care is no exception. At Guided by Compassion, we meet that standard by carefully pairing each client with a caregiver who is not just trained and vetted, but genuinely committed to their well-being and daily quality of life.`,
+    },
+    'houston': {
+        hero: `Houston is one of the most diverse cities in the nation — and the families who call it home have equally diverse care needs. Guided by Compassion provides licensed, professional in-home care across Houston's many neighborhoods, from the Medical Center and Midtown to Memorial, the Heights, and beyond. Whatever level of support your loved one needs, we build a care plan around their life.`,
+        about: `As home to the Texas Medical Center — the largest medical complex in the world — Houston has unparalleled healthcare resources, yet navigating long-term in-home care can still feel overwhelming. Guided by Compassion bridges that gap by providing reliable, compassionate home care that works alongside your loved one's existing medical team. We serve Harris County families throughout the city, adapting to the unique rhythm and needs of each Houston household.`,
+    },
+    'friendswood': {
+        hero: `Friendswood is a close-knit Galveston County community where neighbors genuinely look out for one another — and so do we. Guided by Compassion provides licensed home care services to Friendswood seniors and individuals with disabilities, offering personal care, companionship, and specialized support that allows your loved one to remain safely and comfortably in their own home.`,
+        about: `Originally settled by Quakers, Friendswood has always held community care and mutual support as core values — principles that run through everything we do at Guided by Compassion. Serving families along Clear Creek and throughout the Friendswood area, we understand this community's quiet, residential character and the importance of matching clients with caregivers who share its values of respect, discretion, and genuine kindness.`,
+    },
+    'alvin': {
+        hero: `Alvin may be a smaller Brazoria County community, but the care needs of its residents are just as important. Guided by Compassion provides licensed, in-home care to Alvin seniors and families — giving aging adults the personal assistance, companionship, and specialized support they deserve to remain safe and independent at home, without having to leave the town they've called home for decades.`,
+        about: `Alvin is a proud Brazoria County community with deep agricultural roots and a strong local identity. For seniors who have spent their lives here, relocating to a care facility is rarely the preferred option — and with Guided by Compassion, it doesn't have to be. We bring professional in-home care directly to Alvin residents, providing the personal attention and consistent presence that institutional settings simply cannot replicate.`,
+    },
+    'pearland': {
+        hero: `Pearland is one of the fastest-growing cities in Texas — and the demand for quality in-home care has grown right alongside it. Guided by Compassion provides professional, licensed home care to Pearland families, offering personal care, companion care, dementia support, and more. Our trained caregivers serve residents across Pearland's master-planned communities and established neighborhoods throughout Brazoria County.`,
+        about: `As Pearland has expanded from a small suburb into a thriving city, so has the complexity of caring for aging residents and loved ones with disabilities. Many Pearland families are balancing demanding careers, children, and the responsibility of supporting an aging parent — often without a local support network. Guided by Compassion steps in as a reliable partner, offering flexible care plans that meet families exactly where they are, whether that means a few hours of weekly help or full-time support.`,
+    },
+    'webster': {
+        hero: `Webster sits at the gateway to NASA's Johnson Space Center — a Harris County community built on precision and reliability. Guided by Compassion brings that same standard to home care for Webster seniors. Our licensed, background-checked caregivers provide personalized in-home support across Webster and the Clear Lake corridor, ensuring your loved one receives expert care without leaving the community they love.`,
+        about: `Webster is a compact but strategically located Harris County city, close to both HCA Houston Healthcare Clear Lake and the NASA/JSC campus. Families here often manage complex schedules and depend on service providers who are genuinely dependable. At Guided by Compassion, reliability is not a marketing phrase — it is built into every care plan, every caregiver placement, and every check-in call we make to the families we serve.`,
+    },
+    'league-city': {
+        hero: `League City is one of Galveston County's most vibrant waterfront communities — a place where retirees and growing families thrive side by side along the shores of Clear Lake. Guided by Compassion provides licensed home care services to League City seniors, delivering personalized in-home support that preserves independence and dignity for your loved one.`,
+        about: `League City's scenic waterfront neighborhoods, active adult community, and rapid growth make it a distinctive environment for home care. Many League City seniors live full, active lives and need supplemental support rather than institutional care. Guided by Compassion specializes in precisely this: flexible, non-intrusive care that wraps around your loved one's existing lifestyle and routines, providing just the right level of help at exactly the right times.`,
+    },
+    'clear-lake': {
+        hero: `Clear Lake is a unique Houston community shaped by the nearby Johnson Space Center and the calm waters of its namesake lake. Guided by Compassion serves Clear Lake families with licensed, compassionate home care — providing personal assistance, companion care, and specialized services so your loved one can stay comfortably and safely in their own home.`,
+        about: `The Clear Lake area has long been home to engineers, scientists, and their families — people who value precision, careful planning, and high standards. Those same qualities define how Guided by Compassion operates. From the rigor of our caregiver vetting process to the detail of our care plans and the consistency of our family communication, we hold ourselves to the standard that Clear Lake families expect and deserve.`,
+    },
+    'deer-park': {
+        hero: `Deer Park is an established Harris County community with strong neighborhood pride and a multigenerational character. Guided by Compassion is proud to serve Deer Park seniors and families with licensed, professional in-home care — including personal care, companion care, and specialized support — so your loved one can remain safely at home, close to the neighbors and neighborhood they know.`,
+        about: `Deer Park has been home to generations of Harris County families, and many of its long-term residents have no interest in leaving the neighborhoods they have lived in for decades. For seniors who want to age in place, Guided by Compassion provides the in-home care infrastructure that makes it achievable — from daily personal assistance and medication reminders to overnight care and specialized dementia support, all delivered by caregivers who respect the dignity and routines of each client.`,
+    },
+    'pasadena': {
+        hero: `Pasadena is the second-largest city in Harris County — a vibrant, diverse community with a rich history and a strong sense of local identity. Guided by Compassion provides professional home care services to Pasadena seniors and families, offering personal care, companion care, respite support, and specialized dementia care throughout this culturally rich community.`,
+        about: `Pasadena's diverse and multigenerational population means that home care needs here are as varied as its residents. Many Pasadena families are caring for aging parents while managing work, children, and other responsibilities — and they need a care agency that offers genuine cultural sensitivity and scheduling flexibility. Guided by Compassion works with every family individually to create a care plan that fits their circumstances, preferences, and values.`,
+    },
+    'seabrook': {
+        hero: `Seabrook is a charming waterfront city on the shores of Clear Lake where community bonds run deep and residents take pride in their quality of life. Guided by Compassion is honored to serve Seabrook seniors with licensed, compassionate home care — providing the in-home support your loved one needs to remain safe, comfortable, and connected to the community they cherish.`,
+        about: `Seabrook's small-city character and active waterfront lifestyle make it a desirable place to grow older — and Guided by Compassion helps make aging in place possible. We know that Seabrook residents value personal relationships and trust, which is why we take our caregiver matching process seriously. Every caregiver placed in a Seabrook home is not just vetted and trained, but thoughtfully selected to suit the client's personality, daily routine, and individual preferences.`,
+    },
+    'dickinson': {
+        hero: `Dickinson is a growing Galveston County community between League City and the Gulf Coast, where long-time residents and newer families are building their lives together. Guided by Compassion provides licensed, professional home care to Dickinson seniors — offering personal care, companion care, and specialized support so your loved one can continue living on their own terms, in their own home.`,
+        about: `Dickinson is at an interesting inflection point — growing rapidly while retaining the community character that makes it home for so many Galveston County families. For Dickinson seniors who want to age in place rather than transition to a facility, Guided by Compassion provides the comprehensive in-home care infrastructure that makes it possible. Our coordinators meet directly with families to assess needs, build a care plan, and match clients with caregivers who are the right fit — not just available.`,
+    },
+    'santa-fe': {
+        hero: `Santa Fe is a small Galveston County community with a quiet, rural character — where seniors often prefer the comfort of familiar surroundings over the disruption of a care facility. Guided by Compassion proudly serves Santa Fe families with licensed, personalized home care, bringing professional caregiver support directly to your loved one's door, no matter how remote.`,
+        about: `In a community as intimate as Santa Fe, independence and privacy carry special weight. Many seniors here have lived in the same homes for decades, surrounded by neighbors they know and a pace of life they value deeply. Guided by Compassion approaches every Santa Fe care plan with that in mind — providing in-home support that is as unobtrusive as it is effective, reinforcing independence rather than replacing it.`,
+    },
+    'missouri-city': {
+        hero: `Missouri City is a thriving Fort Bend County community known for its diverse, master-planned neighborhoods and exceptional quality of life. Guided by Compassion provides professional, licensed home care to Missouri City seniors and families — offering personalized in-home support that keeps your loved one comfortable, safe, and connected to the community they call home.`,
+        about: `Missouri City's diverse and growing population includes many multigenerational families navigating the challenges of caring for aging relatives while managing demanding lives. Guided by Compassion is a trusted partner for these families — offering flexible schedules, customized care plans, and a team of thoroughly vetted caregivers who bring consistency and warmth to every visit. Whether you are in Quail Valley, Sienna, or anywhere across Missouri City, we are ready to help.`,
+    },
+    'texas-city': {
+        hero: `Texas City is a resilient Gulf Coast community with a proud history and a tight-knit spirit that spans generations. Guided by Compassion is honored to serve Texas City seniors with licensed, compassionate home care — providing personal care, companion care, and specialized support so your loved one can remain in the home and community they have always loved.`,
+        about: `Texas City's long-established waterfront community has a distinctive identity shaped by decades of shared history. Many Texas City seniors are lifelong residents who have built everything they have here — and Guided by Compassion helps protect that by bringing professional, compassionate care directly to their homes. We match every client with a caregiver based on personality and care needs, not just scheduling convenience, because we believe the relationship is as important as the task.`,
+    },
+};
+
 const processSteps = [
     {
         number: '01',
@@ -190,10 +257,9 @@ function City({ cityName: propCityName }) {
                                 Home Care Services in <span className="highlight1">{fullCity}</span>
                             </h1>
                             <p className="city-hero-description">
-                                Guided by Compassion provides professional, licensed home care services to seniors
-                                and individuals with disabilities throughout {fullCity}{county ? `, ${county}` : ''}. Our
-                                background-checked caregivers deliver dignified, compassionate in-home support — right
-                                in the comfort of your own home.
+                                {cityContent[cityName]?.hero ??
+                                    `Guided by Compassion provides professional, licensed home care services to seniors and individuals with disabilities throughout ${fullCity}${county ? `, ${county}` : ''}. Our background-checked caregivers deliver dignified, compassionate in-home support — right in the comfort of your own home.`
+                                }
                             </p>
                             <div className="city-cta-buttons">
                                 <Link href="/scheduling" className="cta-btn primary">
@@ -254,10 +320,9 @@ function City({ cityName: propCityName }) {
                                 Trusted Home Care in {city} — <span className="highlight1">Guided by Compassion</span>
                             </h2>
                             <p className="city-about-description">
-                                At Guided by Compassion, we believe every person deserves dignified, personalized care
-                                in the comfort of their own home. Serving families across {fullCity} and the Greater
-                                Houston area, our mission is to provide the highest standard of in-home care — always
-                                with warmth, professionalism, and a deep respect for each individual's unique needs.
+                                {cityContent[cityName]?.about ??
+                                    `At Guided by Compassion, we believe every person deserves dignified, personalized care in the comfort of their own home. Serving families across ${fullCity} and the Greater Houston area, our mission is to provide the highest standard of in-home care — always with warmth, professionalism, and a deep respect for each individual's unique needs.`
+                                }
                             </p>
                             <p className="city-about-description">
                                 We are a fully licensed and insured Texas home care agency. Every one of our caregivers

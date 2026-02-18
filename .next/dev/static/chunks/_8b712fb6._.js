@@ -4059,6 +4059,71 @@ const allCities = [
         name: 'Santa Fe'
     }
 ];
+// ─── Unique Per-City Content (prevents duplicate content penalty) ─────────────
+// Each city gets its own intro and about paragraph — different angle, different
+// local landmarks, different tone — so Google sees 15 genuinely distinct pages.
+const cityContent = {
+    'sugar-land': {
+        hero: `Sugar Land families trust Guided by Compassion for professional, licensed home care delivered with warmth and dignity. From the established neighborhoods of First Colony and Sugar Creek to newer communities in Riverstone, our background-checked caregivers provide personalized in-home support — so your loved one can age comfortably in the home they love, surrounded by everything familiar.`,
+        about: `Sugar Land is one of Fort Bend County's most sought-after communities — known for its master-planned neighborhoods, excellent amenities, and a strong sense of belonging. Families here set a high bar for every service, and home care is no exception. At Guided by Compassion, we meet that standard by carefully pairing each client with a caregiver who is not just trained and vetted, but genuinely committed to their well-being and daily quality of life.`
+    },
+    'houston': {
+        hero: `Houston is one of the most diverse cities in the nation — and the families who call it home have equally diverse care needs. Guided by Compassion provides licensed, professional in-home care across Houston's many neighborhoods, from the Medical Center and Midtown to Memorial, the Heights, and beyond. Whatever level of support your loved one needs, we build a care plan around their life.`,
+        about: `As home to the Texas Medical Center — the largest medical complex in the world — Houston has unparalleled healthcare resources, yet navigating long-term in-home care can still feel overwhelming. Guided by Compassion bridges that gap by providing reliable, compassionate home care that works alongside your loved one's existing medical team. We serve Harris County families throughout the city, adapting to the unique rhythm and needs of each Houston household.`
+    },
+    'friendswood': {
+        hero: `Friendswood is a close-knit Galveston County community where neighbors genuinely look out for one another — and so do we. Guided by Compassion provides licensed home care services to Friendswood seniors and individuals with disabilities, offering personal care, companionship, and specialized support that allows your loved one to remain safely and comfortably in their own home.`,
+        about: `Originally settled by Quakers, Friendswood has always held community care and mutual support as core values — principles that run through everything we do at Guided by Compassion. Serving families along Clear Creek and throughout the Friendswood area, we understand this community's quiet, residential character and the importance of matching clients with caregivers who share its values of respect, discretion, and genuine kindness.`
+    },
+    'alvin': {
+        hero: `Alvin may be a smaller Brazoria County community, but the care needs of its residents are just as important. Guided by Compassion provides licensed, in-home care to Alvin seniors and families — giving aging adults the personal assistance, companionship, and specialized support they deserve to remain safe and independent at home, without having to leave the town they've called home for decades.`,
+        about: `Alvin is a proud Brazoria County community with deep agricultural roots and a strong local identity. For seniors who have spent their lives here, relocating to a care facility is rarely the preferred option — and with Guided by Compassion, it doesn't have to be. We bring professional in-home care directly to Alvin residents, providing the personal attention and consistent presence that institutional settings simply cannot replicate.`
+    },
+    'pearland': {
+        hero: `Pearland is one of the fastest-growing cities in Texas — and the demand for quality in-home care has grown right alongside it. Guided by Compassion provides professional, licensed home care to Pearland families, offering personal care, companion care, dementia support, and more. Our trained caregivers serve residents across Pearland's master-planned communities and established neighborhoods throughout Brazoria County.`,
+        about: `As Pearland has expanded from a small suburb into a thriving city, so has the complexity of caring for aging residents and loved ones with disabilities. Many Pearland families are balancing demanding careers, children, and the responsibility of supporting an aging parent — often without a local support network. Guided by Compassion steps in as a reliable partner, offering flexible care plans that meet families exactly where they are, whether that means a few hours of weekly help or full-time support.`
+    },
+    'webster': {
+        hero: `Webster sits at the gateway to NASA's Johnson Space Center — a Harris County community built on precision and reliability. Guided by Compassion brings that same standard to home care for Webster seniors. Our licensed, background-checked caregivers provide personalized in-home support across Webster and the Clear Lake corridor, ensuring your loved one receives expert care without leaving the community they love.`,
+        about: `Webster is a compact but strategically located Harris County city, close to both HCA Houston Healthcare Clear Lake and the NASA/JSC campus. Families here often manage complex schedules and depend on service providers who are genuinely dependable. At Guided by Compassion, reliability is not a marketing phrase — it is built into every care plan, every caregiver placement, and every check-in call we make to the families we serve.`
+    },
+    'league-city': {
+        hero: `League City is one of Galveston County's most vibrant waterfront communities — a place where retirees and growing families thrive side by side along the shores of Clear Lake. Guided by Compassion provides licensed home care services to League City seniors, delivering personalized in-home support that preserves independence and dignity for your loved one.`,
+        about: `League City's scenic waterfront neighborhoods, active adult community, and rapid growth make it a distinctive environment for home care. Many League City seniors live full, active lives and need supplemental support rather than institutional care. Guided by Compassion specializes in precisely this: flexible, non-intrusive care that wraps around your loved one's existing lifestyle and routines, providing just the right level of help at exactly the right times.`
+    },
+    'clear-lake': {
+        hero: `Clear Lake is a unique Houston community shaped by the nearby Johnson Space Center and the calm waters of its namesake lake. Guided by Compassion serves Clear Lake families with licensed, compassionate home care — providing personal assistance, companion care, and specialized services so your loved one can stay comfortably and safely in their own home.`,
+        about: `The Clear Lake area has long been home to engineers, scientists, and their families — people who value precision, careful planning, and high standards. Those same qualities define how Guided by Compassion operates. From the rigor of our caregiver vetting process to the detail of our care plans and the consistency of our family communication, we hold ourselves to the standard that Clear Lake families expect and deserve.`
+    },
+    'deer-park': {
+        hero: `Deer Park is an established Harris County community with strong neighborhood pride and a multigenerational character. Guided by Compassion is proud to serve Deer Park seniors and families with licensed, professional in-home care — including personal care, companion care, and specialized support — so your loved one can remain safely at home, close to the neighbors and neighborhood they know.`,
+        about: `Deer Park has been home to generations of Harris County families, and many of its long-term residents have no interest in leaving the neighborhoods they have lived in for decades. For seniors who want to age in place, Guided by Compassion provides the in-home care infrastructure that makes it achievable — from daily personal assistance and medication reminders to overnight care and specialized dementia support, all delivered by caregivers who respect the dignity and routines of each client.`
+    },
+    'pasadena': {
+        hero: `Pasadena is the second-largest city in Harris County — a vibrant, diverse community with a rich history and a strong sense of local identity. Guided by Compassion provides professional home care services to Pasadena seniors and families, offering personal care, companion care, respite support, and specialized dementia care throughout this culturally rich community.`,
+        about: `Pasadena's diverse and multigenerational population means that home care needs here are as varied as its residents. Many Pasadena families are caring for aging parents while managing work, children, and other responsibilities — and they need a care agency that offers genuine cultural sensitivity and scheduling flexibility. Guided by Compassion works with every family individually to create a care plan that fits their circumstances, preferences, and values.`
+    },
+    'seabrook': {
+        hero: `Seabrook is a charming waterfront city on the shores of Clear Lake where community bonds run deep and residents take pride in their quality of life. Guided by Compassion is honored to serve Seabrook seniors with licensed, compassionate home care — providing the in-home support your loved one needs to remain safe, comfortable, and connected to the community they cherish.`,
+        about: `Seabrook's small-city character and active waterfront lifestyle make it a desirable place to grow older — and Guided by Compassion helps make aging in place possible. We know that Seabrook residents value personal relationships and trust, which is why we take our caregiver matching process seriously. Every caregiver placed in a Seabrook home is not just vetted and trained, but thoughtfully selected to suit the client's personality, daily routine, and individual preferences.`
+    },
+    'dickinson': {
+        hero: `Dickinson is a growing Galveston County community between League City and the Gulf Coast, where long-time residents and newer families are building their lives together. Guided by Compassion provides licensed, professional home care to Dickinson seniors — offering personal care, companion care, and specialized support so your loved one can continue living on their own terms, in their own home.`,
+        about: `Dickinson is at an interesting inflection point — growing rapidly while retaining the community character that makes it home for so many Galveston County families. For Dickinson seniors who want to age in place rather than transition to a facility, Guided by Compassion provides the comprehensive in-home care infrastructure that makes it possible. Our coordinators meet directly with families to assess needs, build a care plan, and match clients with caregivers who are the right fit — not just available.`
+    },
+    'santa-fe': {
+        hero: `Santa Fe is a small Galveston County community with a quiet, rural character — where seniors often prefer the comfort of familiar surroundings over the disruption of a care facility. Guided by Compassion proudly serves Santa Fe families with licensed, personalized home care, bringing professional caregiver support directly to your loved one's door, no matter how remote.`,
+        about: `In a community as intimate as Santa Fe, independence and privacy carry special weight. Many seniors here have lived in the same homes for decades, surrounded by neighbors they know and a pace of life they value deeply. Guided by Compassion approaches every Santa Fe care plan with that in mind — providing in-home support that is as unobtrusive as it is effective, reinforcing independence rather than replacing it.`
+    },
+    'missouri-city': {
+        hero: `Missouri City is a thriving Fort Bend County community known for its diverse, master-planned neighborhoods and exceptional quality of life. Guided by Compassion provides professional, licensed home care to Missouri City seniors and families — offering personalized in-home support that keeps your loved one comfortable, safe, and connected to the community they call home.`,
+        about: `Missouri City's diverse and growing population includes many multigenerational families navigating the challenges of caring for aging relatives while managing demanding lives. Guided by Compassion is a trusted partner for these families — offering flexible schedules, customized care plans, and a team of thoroughly vetted caregivers who bring consistency and warmth to every visit. Whether you are in Quail Valley, Sienna, or anywhere across Missouri City, we are ready to help.`
+    },
+    'texas-city': {
+        hero: `Texas City is a resilient Gulf Coast community with a proud history and a tight-knit spirit that spans generations. Guided by Compassion is honored to serve Texas City seniors with licensed, compassionate home care — providing personal care, companion care, and specialized support so your loved one can remain in the home and community they have always loved.`,
+        about: `Texas City's long-established waterfront community has a distinctive identity shaped by decades of shared history. Many Texas City seniors are lifelong residents who have built everything they have here — and Guided by Compassion helps protect that by bringing professional, compassionate care directly to their homes. We match every client with a caregiver based on personality and care needs, not just scheduling convenience, because we believe the relationship is as important as the task.`
+    }
+};
 const processSteps = [
     {
         number: '01',
@@ -4134,7 +4199,7 @@ function City({ cityName: propCityName }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/views/City.jsx",
-                lineNumber: 166,
+                lineNumber: 233,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -4154,12 +4219,12 @@ function City({ cityName: propCityName }) {
                                             children: "Home"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 174,
+                                            lineNumber: 241,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 174,
+                                        lineNumber: 241,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4168,7 +4233,7 @@ function City({ cityName: propCityName }) {
                                         children: "/"
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 175,
+                                        lineNumber: 242,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4177,12 +4242,12 @@ function City({ cityName: propCityName }) {
                                             children: "Home Care Texas"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 176,
+                                            lineNumber: 243,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 176,
+                                        lineNumber: 243,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4191,7 +4256,7 @@ function City({ cityName: propCityName }) {
                                         children: "/"
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 177,
+                                        lineNumber: 244,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4199,23 +4264,23 @@ function City({ cityName: propCityName }) {
                                         children: fullCity
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 178,
+                                        lineNumber: 245,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 173,
+                                lineNumber: 240,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 172,
+                            lineNumber: 239,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 171,
+                        lineNumber: 238,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4238,7 +4303,7 @@ function City({ cityName: propCityName }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 188,
+                                                lineNumber: 255,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -4251,26 +4316,21 @@ function City({ cityName: propCityName }) {
                                                         children: fullCity
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 257,
                                                         columnNumber: 55
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 189,
+                                                lineNumber: 256,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "city-hero-description",
-                                                children: [
-                                                    "Guided by Compassion provides professional, licensed home care services to seniors and individuals with disabilities throughout ",
-                                                    fullCity,
-                                                    county ? `, ${county}` : '',
-                                                    ". Our background-checked caregivers deliver dignified, compassionate in-home support — right in the comfort of your own home."
-                                                ]
-                                            }, void 0, true, {
+                                                children: cityContent[cityName]?.hero ?? `Guided by Compassion provides professional, licensed home care services to seniors and individuals with disabilities throughout ${fullCity}${county ? `, ${county}` : ''}. Our background-checked caregivers deliver dignified, compassionate in-home support — right in the comfort of your own home.`
+                                            }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 192,
+                                                lineNumber: 259,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4282,7 +4342,7 @@ function City({ cityName: propCityName }) {
                                                         children: "Schedule a Free Consultation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 265,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4291,13 +4351,13 @@ function City({ cityName: propCityName }) {
                                                         children: "Contact Us"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 202,
+                                                        lineNumber: 268,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 198,
+                                                lineNumber: 264,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4308,7 +4368,7 @@ function City({ cityName: propCityName }) {
                                                         children: "Available 24/7 — Call Now:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 207,
+                                                        lineNumber: 273,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -4317,13 +4377,13 @@ function City({ cityName: propCityName }) {
                                                         children: "(346) 646-4110"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 274,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 206,
+                                                lineNumber: 272,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4334,7 +4394,7 @@ function City({ cityName: propCityName }) {
                                                         children: "✓ Licensed & Insured"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 213,
+                                                        lineNumber: 279,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4342,7 +4402,7 @@ function City({ cityName: propCityName }) {
                                                         children: "✓ Background-Checked"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 214,
+                                                        lineNumber: 280,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4350,19 +4410,19 @@ function City({ cityName: propCityName }) {
                                                         children: "✓ 24/7 Support"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 215,
+                                                        lineNumber: 281,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 212,
+                                                lineNumber: 278,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 187,
+                                        lineNumber: 254,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4376,28 +4436,28 @@ function City({ cityName: propCityName }) {
                                             height: "500"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 219,
+                                            lineNumber: 285,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 218,
+                                        lineNumber: 284,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 186,
+                                lineNumber: 253,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 185,
+                            lineNumber: 252,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 184,
+                        lineNumber: 251,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4417,12 +4477,12 @@ function City({ cityName: propCityName }) {
                                             className: "city-about-img"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 241,
+                                            lineNumber: 307,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 240,
+                                        lineNumber: 306,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4435,7 +4495,7 @@ function City({ cityName: propCityName }) {
                                                 children: "About Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 252,
+                                                lineNumber: 318,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4450,25 +4510,21 @@ function City({ cityName: propCityName }) {
                                                         children: "Guided by Compassion"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 254,
+                                                        lineNumber: 320,
                                                         columnNumber: 63
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 253,
+                                                lineNumber: 319,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "city-about-description",
-                                                children: [
-                                                    "At Guided by Compassion, we believe every person deserves dignified, personalized care in the comfort of their own home. Serving families across ",
-                                                    fullCity,
-                                                    " and the Greater Houston area, our mission is to provide the highest standard of in-home care — always with warmth, professionalism, and a deep respect for each individual's unique needs."
-                                                ]
-                                            }, void 0, true, {
+                                                children: cityContent[cityName]?.about ?? `At Guided by Compassion, we believe every person deserves dignified, personalized care in the comfort of their own home. Serving families across ${fullCity} and the Greater Houston area, our mission is to provide the highest standard of in-home care — always with warmth, professionalism, and a deep respect for each individual's unique needs.`
+                                            }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 256,
+                                                lineNumber: 322,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4476,7 +4532,7 @@ function City({ cityName: propCityName }) {
                                                 children: "We are a fully licensed and insured Texas home care agency. Every one of our caregivers is thoroughly background-checked, trained, and matched carefully to each client. Whether your loved one needs occasional assistance or full-time support, we build a care plan that fits their life."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 262,
+                                                lineNumber: 327,
                                                 columnNumber: 29
                                             }, this),
                                             (county || zips.length > 0) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4491,7 +4547,7 @@ function City({ cityName: propCityName }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 269,
+                                                lineNumber: 334,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4522,7 +4578,7 @@ function City({ cityName: propCityName }) {
                                                                 children: v.icon
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/views/City.jsx",
-                                                                lineNumber: 284,
+                                                                lineNumber: 349,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4530,18 +4586,18 @@ function City({ cityName: propCityName }) {
                                                                 children: v.label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/views/City.jsx",
-                                                                lineNumber: 285,
+                                                                lineNumber: 350,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, v.label, true, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 348,
                                                         columnNumber: 37
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 276,
+                                                lineNumber: 341,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4554,35 +4610,35 @@ function City({ cityName: propCityName }) {
                                                         children: "→"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 355,
                                                         columnNumber: 53
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 289,
+                                                lineNumber: 354,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 251,
+                                        lineNumber: 317,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 239,
+                                lineNumber: 305,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 238,
+                            lineNumber: 304,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 237,
+                        lineNumber: 303,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4591,12 +4647,12 @@ function City({ cityName: propCityName }) {
                             cityName: city
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 299,
+                            lineNumber: 364,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 298,
+                        lineNumber: 363,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4614,7 +4670,7 @@ function City({ cityName: propCityName }) {
                                             children: "Getting Started"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 306,
+                                            lineNumber: 371,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4626,7 +4682,7 @@ function City({ cityName: propCityName }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 307,
+                                            lineNumber: 372,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4638,13 +4694,13 @@ function City({ cityName: propCityName }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 310,
+                                            lineNumber: 375,
                                             columnNumber: 25
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/views/City.jsx",
-                                    lineNumber: 305,
+                                    lineNumber: 370,
                                     columnNumber: 21
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4660,7 +4716,7 @@ function City({ cityName: propCityName }) {
                                                     children: step.number
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 387,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4668,7 +4724,7 @@ function City({ cityName: propCityName }) {
                                                     children: step.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 388,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4676,18 +4732,18 @@ function City({ cityName: propCityName }) {
                                                     children: step.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 324,
+                                                    lineNumber: 389,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, step.number, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 316,
+                                            lineNumber: 381,
                                             columnNumber: 29
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/views/City.jsx",
-                                    lineNumber: 314,
+                                    lineNumber: 379,
                                     columnNumber: 21
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4699,23 +4755,23 @@ function City({ cityName: propCityName }) {
                                         children: "Start with a Free Consultation"
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 329,
+                                        lineNumber: 394,
                                         columnNumber: 25
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/views/City.jsx",
-                                    lineNumber: 328,
+                                    lineNumber: 393,
                                     columnNumber: 21
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 304,
+                            lineNumber: 369,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 303,
+                        lineNumber: 368,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4735,7 +4791,7 @@ function City({ cityName: propCityName }) {
                                                 children: "Why Choose Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 341,
+                                                lineNumber: 406,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4748,7 +4804,7 @@ function City({ cityName: propCityName }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 342,
+                                                lineNumber: 407,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4783,7 +4839,7 @@ function City({ cityName: propCityName }) {
                                                                 children: "✓"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/views/City.jsx",
-                                                                lineNumber: 369,
+                                                                lineNumber: 434,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4793,37 +4849,37 @@ function City({ cityName: propCityName }) {
                                                                         children: pt.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/views/City.jsx",
-                                                                        lineNumber: 371,
+                                                                        lineNumber: 436,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         children: pt.body
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/views/City.jsx",
-                                                                        lineNumber: 372,
+                                                                        lineNumber: 437,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/views/City.jsx",
-                                                                lineNumber: 370,
+                                                                lineNumber: 435,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, pt.title, true, {
                                                         fileName: "[project]/src/views/City.jsx",
-                                                        lineNumber: 368,
+                                                        lineNumber: 433,
                                                         columnNumber: 37
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 345,
+                                                lineNumber: 410,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 340,
+                                        lineNumber: 405,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4836,28 +4892,28 @@ function City({ cityName: propCityName }) {
                                             className: "city-why-img"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 379,
+                                            lineNumber: 444,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 378,
+                                        lineNumber: 443,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 339,
+                                lineNumber: 404,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 338,
+                            lineNumber: 403,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 337,
+                        lineNumber: 402,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4866,19 +4922,19 @@ function City({ cityName: propCityName }) {
                             cityName: city
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 391,
+                            lineNumber: 456,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 390,
+                        lineNumber: 455,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Refer$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         cityName: city
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 395,
+                        lineNumber: 460,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4887,12 +4943,12 @@ function City({ cityName: propCityName }) {
                             cityName: city
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 399,
+                            lineNumber: 464,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 398,
+                        lineNumber: 463,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4910,7 +4966,7 @@ function City({ cityName: propCityName }) {
                                             children: "FAQ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 406,
+                                            lineNumber: 471,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4923,7 +4979,7 @@ function City({ cityName: propCityName }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 407,
+                                            lineNumber: 472,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4935,13 +4991,13 @@ function City({ cityName: propCityName }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 410,
+                                            lineNumber: 475,
                                             columnNumber: 25
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/views/City.jsx",
-                                    lineNumber: 405,
+                                    lineNumber: 470,
                                     columnNumber: 21
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4956,7 +5012,7 @@ function City({ cityName: propCityName }) {
                                                     children: faq.q
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 422,
+                                                    lineNumber: 487,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4964,29 +5020,29 @@ function City({ cityName: propCityName }) {
                                                     children: faq.a
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 423,
+                                                    lineNumber: 488,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 416,
+                                            lineNumber: 481,
                                             columnNumber: 29
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/views/City.jsx",
-                                    lineNumber: 414,
+                                    lineNumber: 479,
                                     columnNumber: 21
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 404,
+                            lineNumber: 469,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 403,
+                        lineNumber: 468,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5003,7 +5059,7 @@ function City({ cityName: propCityName }) {
                                         children: "Service Area"
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 434,
+                                        lineNumber: 499,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5012,7 +5068,7 @@ function City({ cityName: propCityName }) {
                                         children: "Home Care Across Greater Houston, TX"
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 435,
+                                        lineNumber: 500,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5024,7 +5080,7 @@ function City({ cityName: propCityName }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 438,
+                                        lineNumber: 503,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -5041,7 +5097,7 @@ function City({ cityName: propCityName }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 446,
+                                                    lineNumber: 511,
                                                     columnNumber: 41
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: `/home-care/texas/${c.slug}`,
@@ -5052,33 +5108,33 @@ function City({ cityName: propCityName }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 450,
+                                                    lineNumber: 515,
                                                     columnNumber: 41
                                                 }, this)
                                             }, c.slug, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 444,
+                                                lineNumber: 509,
                                                 columnNumber: 33
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 442,
+                                        lineNumber: 507,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 433,
+                                lineNumber: 498,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 432,
+                            lineNumber: 497,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 431,
+                        lineNumber: 496,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5099,7 +5155,7 @@ function City({ cityName: propCityName }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 468,
+                                        lineNumber: 533,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5111,7 +5167,7 @@ function City({ cityName: propCityName }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 471,
+                                        lineNumber: 536,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5130,12 +5186,12 @@ function City({ cityName: propCityName }) {
                                             className: "city-map-iframe"
                                         }, void 0, false, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 475,
+                                            lineNumber: 540,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 474,
+                                        lineNumber: 539,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5166,14 +5222,14 @@ function City({ cityName: propCityName }) {
                                                             d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/views/City.jsx",
-                                                            lineNumber: 496,
+                                                            lineNumber: 561,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
                                                             points: "15 3 21 3 21 9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/views/City.jsx",
-                                                            lineNumber: 497,
+                                                            lineNumber: 562,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -5183,40 +5239,40 @@ function City({ cityName: propCityName }) {
                                                             y2: "3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/views/City.jsx",
-                                                            lineNumber: 498,
+                                                            lineNumber: 563,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 495,
+                                                    lineNumber: 560,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 488,
+                                            lineNumber: 553,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 487,
+                                        lineNumber: 552,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 467,
+                                lineNumber: 532,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 466,
+                            lineNumber: 531,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 465,
+                        lineNumber: 530,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -5238,7 +5294,7 @@ function City({ cityName: propCityName }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 510,
+                                        lineNumber: 575,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5246,7 +5302,7 @@ function City({ cityName: propCityName }) {
                                         children: "Contact Guided by Compassion today. We'll build a personalized care plan around your loved one's needs and get care started quickly — with no pressure and no obligation."
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 513,
+                                        lineNumber: 578,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5258,7 +5314,7 @@ function City({ cityName: propCityName }) {
                                                 children: "Schedule a Free Consultation"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 518,
+                                                lineNumber: 583,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -5267,13 +5323,13 @@ function City({ cityName: propCityName }) {
                                                 children: "Contact Our Team"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/views/City.jsx",
-                                                lineNumber: 521,
+                                                lineNumber: 586,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 517,
+                                        lineNumber: 582,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5287,7 +5343,7 @@ function City({ cityName: propCityName }) {
                                                     children: contactCopy?.contactDetails?.phone ?? '346-646-4110'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 528,
+                                                    lineNumber: 593,
                                                     columnNumber: 33
                                                 }, this),
                                                 ' ',
@@ -5298,51 +5354,51 @@ function City({ cityName: propCityName }) {
                                                     children: contactCopy?.contactDetails?.email ?? 'contact@guidedbycompassion.com'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/views/City.jsx",
-                                                    lineNumber: 532,
+                                                    lineNumber: 597,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/views/City.jsx",
-                                            lineNumber: 526,
+                                            lineNumber: 591,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/views/City.jsx",
-                                        lineNumber: 525,
+                                        lineNumber: 590,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/views/City.jsx",
-                                lineNumber: 509,
+                                lineNumber: 574,
                                 columnNumber: 21
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/views/City.jsx",
-                            lineNumber: 508,
+                            lineNumber: 573,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/views/City.jsx",
-                        lineNumber: 507,
+                        lineNumber: 572,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/views/City.jsx",
-                lineNumber: 168,
+                lineNumber: 235,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Footer$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/views/City.jsx",
-                lineNumber: 543,
+                lineNumber: 608,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/views/City.jsx",
-        lineNumber: 165,
+        lineNumber: 232,
         columnNumber: 9
     }, this);
 }
