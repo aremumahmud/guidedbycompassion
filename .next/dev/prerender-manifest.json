@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "096f55fbd09db348d3086b893c672930",
-    "previewModeSigningKey": "900ae7ace0338e0033c8ae20c39effdfff1c8dbc87c4210e36ce9f84c7aa9597",
-    "previewModeEncryptionKey": "5c0ff5b7517cc1f1edd2774000bb3be2f52cdbf8b5a530291c1a3d5bbcb575d7"
-  }
-}
+{"version":4,"routes":{"/services/personal-care":{},"/services/companion-care":{},"/services/respite-care":{},"/services/in-facility-care":{},"/services/specialized-care":{},"/services/end-of-life-care":{}},"dynamicRoutes":{"/services/[serviceId]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[serviceId]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"096f55fbd09db348d3086b893c672930","previewModeSigningKey":"900ae7ace0338e0033c8ae20c39effdfff1c8dbc87c4210e36ce9f84c7aa9597","previewModeEncryptionKey":"5c0ff5b7517cc1f1edd2774000bb3be2f52cdbf8b5a530291c1a3d5bbcb575d7"}}

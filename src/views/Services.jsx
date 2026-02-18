@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 function Services() {
     const { servicesData: servicesDataFromContext, contactData, servicesList: servicesListFromContext } = useContent();
-    const { servicesData, servicesList } = servicesListFromContext;
+    const { servicesData, servicesList } = servicesListFromContext || {};
 
     // console.log(servicesData, servicesList, "servicesData, servicesList");
     const servicesCopy = servicesDataFromContext || servicesCopyFallback;
