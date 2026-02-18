@@ -87,7 +87,7 @@ function Contact({ cityName }) {
             <div className="contact-container">
                 <div className="contact-header" data-aos="fade-up">
                     <div className="contact-badge">{cityName ? `Contact Us in ${cityName}` : homeCopy.contact.badge}</div>
-                    <h2 className="contact-title1">{cityName ? `Request Home Care Services in ${cityName}, TX` : homeCopy.contact.title}</h2>
+                    <h2 className="contact-title">{cityName ? `Request Home Care Services in ${cityName}, TX` : homeCopy.contact.title}</h2>
                     <p className="contact-subtitle">
                         {cityName
                             ? `Fill out the form below and our ${cityName} care coordinator will respond within one business day.`
