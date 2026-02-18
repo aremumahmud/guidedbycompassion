@@ -1,3 +1,4 @@
+'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import { Upload, File, X } from 'lucide-react';
 import { DOCUMENT_WIDGET_CONFIG } from '../config/cloudinary';

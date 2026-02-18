@@ -1,13 +1,15 @@
+'use client';
 import './Footer.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
+
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
 
 function Footer() {
-  const { homeData } = useContent();
-  const homeCopy = homeData || homeCopyFallback;
-  const [email, setEmail] = useState('');
+    const { homeData } = useContent();
+    const homeCopy = homeData || homeCopyFallback;
+    const [email, setEmail] = useState('');
 
     const handleNewsletterSubmit = (e) => {
         e.preventDefault();
@@ -43,11 +45,11 @@ function Footer() {
                         <h4 className="footer-heading">{homeCopy.footer.sections.ourServices.title}</h4>
                         <ul className="footer-links">
                             {homeCopy.footer.sections.ourServices.links.map((link, index) => (
-                                <li key={index}><Link to="/services">{link}</Link></li>
+                                <li key={index}><Link href="/services">{link}</Link></li>
                             ))}
                         </ul>
                         {/* <div className="footer-cta">
-                            <Link to="/contact" className="schedule-btn">{homeCopy.footer.sections.ourServices.ctaButton}</Link>
+                            <Link href="/contact" className="schedule-btn">{homeCopy.footer.sections.ourServices.ctaButton}</Link>
                         </div> */}
                     </div>
 
@@ -58,17 +60,17 @@ function Footer() {
                             {homeCopy.footer.sections.quickLinks.links.map((link, index) => {
                                 let linkElement;
                                 if (link === "Refer Us") {
-                                    linkElement = <Link to="/refer-us">{link}</Link>;
+                                    linkElement = <Link href="/refer-us">{link}</Link>;
                                 } else if (link === "About Us") {
-                                    linkElement = <Link to="/about">{link}</Link>;
+                                    linkElement = <Link href="/about">{link}</Link>;
                                 } else if (link === "Our Services") {
-                                    linkElement = <Link to="/services">{link}</Link>;
+                                    linkElement = <Link href="/services">{link}</Link>;
                                 } else if (link === "Careers") {
-                                    linkElement = <Link to="/careers">{link}</Link>;
+                                    linkElement = <Link href="/careers">{link}</Link>;
                                 } else if (link === "Blog") {
-                                    linkElement = <Link to="/blogs">{link}</Link>;
+                                    linkElement = <Link href="/blogs">{link}</Link>;
                                 } else if (link === "Contact") {
-                                    linkElement = <Link to="/contact">{link}</Link>;
+                                    linkElement = <Link href="/contact">{link}</Link>;
                                 } else {
                                     linkElement = <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a>;
                                 }
@@ -77,10 +79,26 @@ function Footer() {
                         </ul>
                     </div>
 
+                    {/* Locations */}
+                    <div className="footer-section">
+                        <h4 className="footer-heading">{homeCopy.footer.sections.locations?.title || "Our Locations"}</h4>
+                        <ul className="footer-links">
+                            {homeCopy.footer.sections.locations?.links.map((link, index) => (
+                                <li key={index}>
+                                    <Link href={`/locations/texas/${link.toLowerCase().replace(/\s+/g, '-')}`}><span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px' }}>{link}</span></Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     {/* Contact Information */}
                     <div className="footer-section">
                         <h4 className="footer-heading">{homeCopy.footer.sections.contactInfo.title}</h4>
                         <div className="contact-info1">
+                            <div className="contact-item">
+                                <strong>Location</strong>
+                                <p>{homeCopy.footer.sections.contactInfo.location}</p>
+                            </div>
                             <div className="contact-item">
                                 <strong>Service Area</strong>
                                 <p>{homeCopy.footer.sections.contactInfo.serviceArea}</p>
@@ -94,7 +112,7 @@ function Footer() {
                                 <p>{homeCopy.footer.sections.contactInfo.email}</p>
                             </div>
                         </div>
-                        
+
                         <div className="business-hours">
                             <h4 className="footer-heading">{homeCopy.footer.sections.businessHours.title}</h4>
                             <div className="hours-list">

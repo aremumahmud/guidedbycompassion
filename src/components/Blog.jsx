@@ -1,5 +1,7 @@
+'use client';
 import './Blog.css'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
+
 import { blogsData } from '../data/blogsData'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
@@ -52,7 +54,7 @@ function Blog() {
                                 
                                 <p className="blog-excerpt">{article.excerpt}</p>
                                 
-                                <Link to={`/blogs/${article.id}`} className="blog-read-more">
+                                <Link href={`/blogs/${article.id}`} className="blog-read-more">
                                     {homeCopy.blog.readMoreButton}
                                     <span className="arrow">→</span>
                                 </Link>
@@ -62,7 +64,7 @@ function Blog() {
                 </div>
 
                 <div className="blog-footer" data-aos="fade-up" data-aos-delay="700">
-                    <Link to="/blogs" className="view-all-btn">
+                    <Link href="/blogs" className="view-all-btn">
                         {homeCopy.blog.viewAllButton}
                     </Link>
                 </div>

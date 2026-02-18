@@ -20,7 +20,7 @@ html, body {
 main, .main-content, .page-content {
   position: relative;
   z-index: 1;
-  margin-top: 122px; /* Account for fixed header height + top banner */
+  /* margin-top: 122px Account for fixed header height + top banner */
 }
 
 /* Ensure first section after header has proper spacing */

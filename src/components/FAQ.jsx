@@ -1,6 +1,8 @@
+'use client';
 import './FAQ.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
+
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
 
@@ -61,7 +63,7 @@ function FAQ() {
                     <div className="faq-cta">
                         <h3>{homeCopy.faq.ctaSection.title}</h3>
                         <p>{homeCopy.faq.ctaSection.description}</p>
-                        <Link to="/contact" className="faq-contact-btn">
+                        <Link href="/contact" className="faq-contact-btn">
                             {homeCopy.faq.ctaSection.button}
                         </Link>
                     </div>

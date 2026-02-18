@@ -1,0 +1,146 @@
+/* [project]/src/components/Loader.css [app-client] (css) */
+.loader-overlay {
+  z-index: 9999;
+  background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity .5s ease-out, visibility .5s ease-out;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  display: flex;
+}
+
+.loader-logo {
+  margin-bottom: .5rem;
+  animation: .6s ease-in fadeIn;
+}
+
+.loader-logo img {
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px #0000001a);
+  width: auto;
+  height: 80px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader-spinner {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.spinner-ring {
+  border: 4px solid #0000;
+  border-top-color: var(--color-primary-500, #ab516f);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: 1.2s cubic-bezier(.5, 0, .5, 1) infinite spin;
+  position: absolute;
+}
+
+.spinner-ring:first-child {
+  animation-delay: -.45s;
+}
+
+.spinner-ring:nth-child(2) {
+  border-top-color: var(--color-secondary-500, #eecfa1);
+  width: 70%;
+  height: 70%;
+  animation-delay: -.3s;
+  top: 15%;
+  left: 15%;
+}
+
+.spinner-ring:nth-child(3) {
+  border-top-color: var(--color-primary-400, #d36588);
+  width: 50%;
+  height: 50%;
+  animation-delay: -.15s;
+  top: 25%;
+  left: 25%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-text {
+  color: var(--text-primary, #6d6f71);
+  letter-spacing: .05em;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: 2s ease-in-out infinite pulse;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: .6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+[data-theme="dark"] .loader-overlay {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+}
+
+[data-theme="dark"] .loader-text {
+  color: var(--text-light, #fff);
+}
+
+@media (max-width: 768px) {
+  .loader-logo img {
+    height: 60px;
+  }
+
+  .loader-spinner {
+    width: 60px;
+    height: 60px;
+  }
+
+  .spinner-ring {
+    border-width: 3px;
+  }
+
+  .loader-text {
+    font-size: .875rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_Loader_css_bad6b30c._.single.css.map*/

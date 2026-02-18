@@ -1,3 +1,4 @@
+'use client';
 import './Statistics.css'
 import { useState, useEffect } from 'react'
 import { useContent } from '../contexts/ContentContext'

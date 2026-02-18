@@ -1,9 +1,11 @@
+'use client';
 import './Refer.css'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
+
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
 
-function Refer() {
+function Refer({ cityName }) {
     const { homeData } = useContent();
     const homeCopy = homeData || homeCopyFallback;
     const referralReasons = homeCopy.refer.reasons.map((reason, index) => ({
@@ -18,16 +20,22 @@ function Refer() {
                 <div className="refer-content">
                     <div className="refer-text">
                         <div className="refer-badge" data-aos="fade-up" data-aos-delay="100">
-                            {homeCopy.refer.badge}
+                            {cityName ? `Refer a Family in ${cityName}` : homeCopy.refer.badge}
                         </div>
-                        
+
                         <h2 className="refer-title" data-aos="fade-up" data-aos-delay="200">
-                            {homeCopy.refer.title} <span className="title-highlight">{homeCopy.refer.titleHighlight}</span>
+                            {cityName
+                                ? <>{homeCopy.refer.title} <span className="title-highlight">a Neighbor in {cityName}</span></>
+                                : <>{homeCopy.refer.title} <span className="title-highlight">{homeCopy.refer.titleHighlight}</span></>
+                            }
                         </h2>
-                        
+
                         <div className="refer-description" data-aos="fade-up" data-aos-delay="300">
                             <p>
-                                {homeCopy.refer.description}
+                                {cityName
+                                    ? `Know someone in ${cityName}, TX who could benefit from compassionate home care? Refer them to Guided by Compassion and help connect them with the support they deserve.`
+                                    : homeCopy.refer.description
+                                }
                             </p>
                         </div>
 
@@ -47,7 +55,7 @@ function Refer() {
                         </div>
 
                         <div className="refer-cta" data-aos="fade-up" data-aos-delay="800">
-                            <Link to="/refer-us" className="refer-button">
+                            <Link href="/refer-us" className="refer-button">
                                 {homeCopy.refer.ctaButton}
                             </Link>
                         </div>

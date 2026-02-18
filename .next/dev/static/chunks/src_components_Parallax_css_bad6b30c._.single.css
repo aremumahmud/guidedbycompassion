@@ -1,0 +1,89 @@
+/* [project]/src/components/Parallax.css [app-client] (css) */
+.parallax-spacer {
+  width: 100%;
+  height: 100vh;
+}
+
+.parallax-section {
+  background-color: var(--bg-dark);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transition: opacity .3s, visibility .3s;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.parallax-section.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.parallax-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.parallax-text {
+  color: var(--text-light);
+  letter-spacing: 2px;
+  text-shadow: 0 4px 8px #00000080;
+  perspective: 1000px;
+  margin: 0;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.parallax-text .split-char {
+  transform-origin: 50%;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  display: inline-block;
+}
+
+.parallax-section:before {
+  content: "";
+  z-index: 1;
+  background: radial-gradient(circle at 25% 25%, #ffffff05 0%, #0000 50%), radial-gradient(circle at 75% 75%, #ffffff05 0%, #0000 50%);
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 1024px) {
+  .parallax-text {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-spacer, .parallax-section {
+    height: 80vh;
+  }
+
+  .parallax-text {
+    letter-spacing: 1px;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .parallax-spacer, .parallax-section {
+    height: 60vh;
+  }
+
+  .parallax-text {
+    padding: 0 20px;
+    font-size: 2.2rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_Parallax_css_bad6b30c._.single.css.map*/

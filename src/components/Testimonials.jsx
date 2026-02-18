@@ -1,9 +1,10 @@
+'use client';
 import './Testimonials.css'
 import { useState, useEffect } from 'react'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
 
-function Testimonials() {
+function Testimonials({ cityName }) {
     const { homeData } = useContent();
     const homeCopy = homeData || homeCopyFallback;
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -84,10 +85,10 @@ function Testimonials() {
         <section className="testimonials-section">
             <div className="testimonials-container">
                 <div className="testimonials-header" data-aos="fade-up">
-                    <div className="testimonials-badge">{homeCopy.testimonials.badge}</div>
-                    <h2 className="testimonials-title">{homeCopy.testimonials.title}</h2>
+                    <div className="testimonials-badge">{cityName ? `Families in ${cityName} Speak` : homeCopy.testimonials.badge}</div>
+                    <h2 className="testimonials-title">{cityName ? `What ${cityName} Families Say About Our Care` : homeCopy.testimonials.title}</h2>
                     <p className="testimonials-subtitle">
-                        {homeCopy.testimonials.subtitle}
+                        {cityName ? `Real experiences from families we've served in ${cityName}, TX and the Greater Houston area.` : homeCopy.testimonials.subtitle}
                     </p>
                 </div>
 

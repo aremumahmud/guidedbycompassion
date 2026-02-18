@@ -1,3 +1,5 @@
+'use client';
+
 import './About.css'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'

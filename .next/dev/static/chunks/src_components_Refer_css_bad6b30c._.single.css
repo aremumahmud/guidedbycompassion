@@ -1,0 +1,278 @@
+/* [project]/src/components/Refer.css [app-client] (css) */
+.refer-section {
+  background-color: var(--bg-primary);
+  z-index: 10;
+  width: 100%;
+  box-shadow: var(--shadow-card);
+  border-radius: 30px 30px 0 0;
+  min-height: 100vh;
+  margin: -20vh 0 0;
+  padding: 120px 0;
+  position: relative;
+}
+
+.refer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.refer-content {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  display: flex;
+}
+
+.refer-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.refer-badge {
+  background-color: var(--interactive-primary-default);
+  color: var(--text-light);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.refer-title {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.title-highlight {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.refer-description {
+  margin-bottom: 40px;
+}
+
+.refer-description p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.refer-reasons {
+  margin-bottom: 40px;
+}
+
+.reasons-title {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.reasons-list {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.reason-item {
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+.reason-icon {
+  background-color: var(--interactive-primary-default);
+  width: 24px;
+  height: 24px;
+  color: var(--text-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+}
+
+.reason-content {
+  flex: 1;
+}
+
+.reason-title {
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.reason-description {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+.refer-cta {
+  margin-top: 32px;
+}
+
+.refer-button {
+  background-color: var(--interactive-primary-default);
+  color: var(--text-light);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-block;
+}
+
+.refer-button:hover {
+  background-color: var(--interactive-primary-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.refer-image {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.refer-image img {
+  object-fit: cover;
+  aspect-ratio: 5 / 4;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.image-overlay {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  background-color: #1a1a1ae6;
+  border-radius: 12px;
+  padding: 20px 24px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  box-shadow: 0 8px 32px #0000004d;
+}
+
+.overlay-content {
+  text-align: right;
+}
+
+.overlay-main {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1;
+  display: block;
+}
+
+.overlay-sub {
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .refer-content {
+    gap: 60px;
+  }
+
+  .refer-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .refer-section {
+    margin-top: -15vh;
+    padding: 80px 0;
+  }
+
+  .refer-content {
+    text-align: center;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .refer-text {
+    max-width: 100%;
+  }
+
+  .refer-title {
+    font-size: 2rem;
+  }
+
+  .refer-description p {
+    font-size: 1rem;
+  }
+
+  .reasons-list {
+    align-items: center;
+  }
+
+  .reason-item {
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .refer-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .image-overlay {
+    text-align: center;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .refer-section {
+    margin-top: -10vh;
+    padding: 60px 0;
+  }
+
+  .refer-container {
+    padding: 0 20px;
+  }
+
+  .refer-title {
+    font-size: 1.8rem;
+  }
+
+  .refer-description p {
+    font-size: .95rem;
+  }
+
+  .image-overlay {
+    padding: 16px 20px;
+  }
+
+  .overlay-main {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_Refer_css_bad6b30c._.single.css.map*/

@@ -1,3 +1,4 @@
+'use client';
 import './Parallax.css'
 import { useEffect, useRef, useState } from 'react'
 import SplitText from './SplitText'

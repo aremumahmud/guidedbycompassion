@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/blogs/[blogId]/page": "/blogs/[blogId]",
+  "/blogs/page": "/blogs",
+  "/careers/[jobId]/page": "/careers/[jobId]",
+  "/careers/apply/page": "/careers/apply",
+  "/careers/page": "/careers",
+  "/contact/page": "/contact",
+  "/locations/texas/[cityName]/page": "/locations/texas/[cityName]",
+  "/page": "/",
+  "/refer-us/page": "/refer-us",
+  "/scheduling/page": "/scheduling",
+  "/services/[serviceId]/page": "/services/[serviceId]",
+  "/services/page": "/services"
+}

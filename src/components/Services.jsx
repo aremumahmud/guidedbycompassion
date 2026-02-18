@@ -1,9 +1,11 @@
+'use client';
 import './Services.css'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-function Services() {
+
+function Services({ cityName }) {
     const { homeData } = useContent();
     const homeCopy = homeData || homeCopyFallback;
     const services = homeCopy.services.serviceCards.map((service, index) => ({
@@ -15,16 +17,23 @@ function Services() {
         verified: true
     }));
 
+    const badge    = cityName ? `Our Services in ${cityName}` : homeCopy.services.badge;
+    const title    = cityName ? 'Home Care Services' : homeCopy.services.title;
+    const highlight = cityName ? `in ${cityName}, TX` : homeCopy.services.titleHighlight;
+    const subtitle = cityName
+        ? `Every service is delivered by trained, compassionate caregivers and tailored to the unique needs of each individual and family in ${cityName}, TX.`
+        : homeCopy.services.subtitle;
+
     return (
         <section className="services-section">
             <div className="services-container">
                 <div className="services-header" data-aos="fade-up">
-                    <div className="services-badge">{homeCopy.services.badge}</div>
+                    <div className="services-badge">{badge}</div>
                     <h2 className="services-title">
-                        {homeCopy.services.title} <span className="title-highlight">{homeCopy.services.titleHighlight}</span>
+                        {title} <span className="title-highlight">{highlight}</span>
                     </h2>
                     <p className="services-subtitle">
-                        {homeCopy.services.subtitle}
+                        {subtitle}
                     </p>
                 </div>
 
@@ -74,10 +83,10 @@ function Services() {
 
                 <div className="services-cta-section" data-aos="fade-up" data-aos-delay="200">
                     <h3 className="cta-title">{homeCopy.services.ctaSection.title}</h3>
-                    <p className="cta-description">
+                    <p className="cta-description1">
                         {homeCopy.services.ctaSection.description}
                     </p>
-                    <Link to="/contact" >
+                    <Link href="/contact" >
                     <button className="cta-button">
                         {homeCopy.services.ctaSection.button}
                     </button></Link>

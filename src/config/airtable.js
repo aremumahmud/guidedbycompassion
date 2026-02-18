@@ -1,8 +1,8 @@
 import Airtable from 'airtable';
 
 // Airtable configuration
-const AIRTABLE_TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN || 'your-token-here';
-const AIRTABLE_BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID || 'appvM2lDe6RRvDjl0';
+const AIRTABLE_TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN || 'your-token-here';
+const AIRTABLE_BASE_ID = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || 'appvM2lDe6RRvDjl0';
 const AIRTABLE_TABLE_NAME = 'GDC_Table';
 
 // Debug logging

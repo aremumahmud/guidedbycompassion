@@ -5,12 +5,12 @@
 
 // Cloudinary configuration
 const CLOUDINARY_CONFIG = {
-  cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dvauarkh6',
-  uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'unsigned_upload',
+  cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dvauarkh6',
+  uploadPreset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || 'unsigned_upload',
 };
 
 // Debug logging
-if (import.meta.env.DEV) {
+if (process.env.NODE_ENV === 'development') {
   console.log('Cloudinary Config:', {
     cloudName: CLOUDINARY_CONFIG.cloudName,
     uploadPreset: CLOUDINARY_CONFIG.uploadPreset
@@ -45,7 +45,7 @@ class CloudinaryService {
 
     try {
       console.log(`Uploading file to Cloudinary: ${file.name} (${(file.size / 1024).toFixed(2)}KB)`);
-      
+
       const response = await fetch(CLOUDINARY_UPLOAD_URL, {
         method: 'POST',
         body: formData
@@ -59,7 +59,7 @@ class CloudinaryService {
 
       const data = await response.json();
       console.log(`✓ File uploaded successfully: ${data.secure_url}`);
-      
+
       return {
         url: data.secure_url,
         public_id: data.public_id,

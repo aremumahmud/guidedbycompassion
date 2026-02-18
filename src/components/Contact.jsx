@@ -1,3 +1,4 @@
+'use client';
 import './Contact.css'
 import { useState } from 'react'
 import emailService from '../services/emailService'
@@ -5,7 +6,7 @@ import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
 import contactCopyFallback from '../../copy/contact.json'
 
-function Contact() {
+function Contact({ cityName }) {
     const { homeData, contactData } = useContent();
     const homeCopy = homeData || homeCopyFallback;
     const contactCopy = contactData || contactCopyFallback;
@@ -85,10 +86,13 @@ function Contact() {
         <section className="contact-section">
             <div className="contact-container">
                 <div className="contact-header" data-aos="fade-up">
-                    <div className="contact-badge">{homeCopy.contact.badge}</div>
-                    <h2 className="contact-title1">{homeCopy.contact.title}</h2>
+                    <div className="contact-badge">{cityName ? `Contact Us in ${cityName}` : homeCopy.contact.badge}</div>
+                    <h2 className="contact-title1">{cityName ? `Request Home Care Services in ${cityName}, TX` : homeCopy.contact.title}</h2>
                     <p className="contact-subtitle">
-                        {homeCopy.contact.subtitle}
+                        {cityName
+                            ? `Fill out the form below and our ${cityName} care coordinator will respond within one business day.`
+                            : homeCopy.contact.subtitle
+                        }
                     </p>
                 </div>
 

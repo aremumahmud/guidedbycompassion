@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react'
 import GooeyBtn from './gooeybtn'
 import './hero.css'
@@ -5,7 +6,8 @@ import { BsArrowUpRight, BsArrowUpLeft } from 'react-icons/bs'
 // import GradientBlinds from '../../backgrounds/GradientBlinds/GradientBlinds'
 import { useContent } from '../contexts/ContentContext'
 import homeCopyFallback from '../../copy/home.json'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
+
 
 function Hero() {
     const { homeData } = useContent();
@@ -59,25 +61,22 @@ function Hero() {
                     </div> */}
 
                     <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
-                    <Link to="/contact" className="desktop-primary-cta">
-                        <GooeyBtn extendby={100} direction="left" text={homeCopy.hero.ctaButton} />
-                    </Link>
-                    {/* <Link
-                        to="/contact"
+                        <Link href="/contact" className="desktop-primary-cta">
+                            <GooeyBtn extendby={100} direction="left" text={homeCopy.hero.ctaButton} />
+                        </Link>
+                        {/* <Link href="/contact"
                         className="desktop-primary-cta desktop-contact-cta"
                         aria-label="Contact Guided by Compassion"
                     >
                         <GooeyBtn text={contactButtonLabel} variant="white" extendby={84} />
                     </Link> */}
-                    {/* <Link
-                        to="/contact"
+                        {/* <Link href="/contact"
                         className="mobile-hero-btn schedule-btn"
                         aria-label="Schedule care with Guided by Compassion"
                     >
                         {homeCopy.hero.ctaButton}
                     </Link> */}
-                    {/* <Link
-                        to="/contact"
+                        {/* <Link href="/contact"
                         className="mobile-hero-btn contact-btn"
                         aria-label="Contact Guided by Compassion"
                     >
@@ -89,8 +88,8 @@ function Hero() {
                 <div className="right-content" data-aos="fade-left" data-aos-delay="200">
                     <img
                         src={images[currentImageIndex]}
-                        alt=""
-                        className={`hero-image ${isTransitioning ? 'transitioning-out' : 'transitioning-in'}`} 
+                        alt="Compassionate home care services for seniors in Houston"
+                        className={`hero-image ${isTransitioning ? 'transitioning-out' : 'transitioning-in'}`}
                         style={{
                             transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
                             opacity: isTransitioning ? 0 : 1,
@@ -148,8 +147,8 @@ function Hero() {
                         </div>
                     </div>
 
-                  
-                  {/* *<div className="decoration_wrapper" >
+
+                    {/* *<div className="decoration_wrapper" >
                         <img className="decor_top" src={homeCopy.images.hero.decor} alt="" />
                         <img className="decor_bottom" src={homeCopy.images.hero.decor} alt="" />
 
