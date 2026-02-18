@@ -1834,7 +1834,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function Services() {
     const { servicesData: servicesDataFromContext, contactData, servicesList: servicesListFromContext } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$ContentContext$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContent"])();
-    const { servicesData, servicesList } = servicesListFromContext || {};
+    const { servicesData = {}, servicesList = [] } = servicesListFromContext || {};
     // console.log(servicesData, servicesList, "servicesData, servicesList");
     const servicesCopy = servicesDataFromContext || __TURBOPACK__imported__module__$5b$project$5d2f$copy$2f$services$2e$json__$28$json$29$__["default"];
     const contactCopy = contactData || __TURBOPACK__imported__module__$5b$project$5d2f$copy$2f$contact$2e$json__$28$json$29$__["default"];
